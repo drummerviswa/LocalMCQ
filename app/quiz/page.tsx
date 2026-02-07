@@ -110,11 +110,9 @@ export default function QuizPage() {
           </span>
 
           <span className="text-sm text-zinc-500">
-            {localStorage.getItem("teamDetails") && (
-              <>
-                {p1} | {p2}
-              </>
-            )}
+            <>
+              {p1} | {p2}
+            </>
           </span>
         </div>
 
