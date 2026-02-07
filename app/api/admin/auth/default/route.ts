@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import bcrypt from "bcrypt";
 
-export async function GET(request: NextRequest, response: NextResponse) {
+export async function GET() {
   const adminUsername = process.env.NEXT_PUBLIC_ADMIN_USERNAME || "admin";
   const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "admin";
 

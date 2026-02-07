@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import bcrypt from "bcrypt";
@@ -56,9 +57,9 @@ export async function POST(req: NextRequest) {
     });
 
     return res;
-  } catch (err) {
+  } catch (err: any) {
     return NextResponse.json(
-      { success: false, message: "Server error" },
+      { success: false, message: err.message },
       { status: 500 },
     );
   }

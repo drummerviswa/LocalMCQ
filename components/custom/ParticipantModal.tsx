@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -7,7 +8,6 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
 } from "@/components/ui/dialog";
 import { Field, FieldGroup, FieldTitle } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
@@ -55,8 +55,8 @@ export default function ParticipantModal() {
 
     Object.entries(data).forEach(([key, value]) => {
       if (key === "participants") {
-        value.forEach((p: any, i: number) => {
-          Object.entries(p).forEach(([k, v]) => {
+        (value as any[]).forEach((p: any, i: number) => {
+          Object.entries(p as object).forEach(([k, v]) => {
             const input = formRef.current?.querySelector(
               `[name="participants[${i}].${k}"]`
             ) as HTMLInputElement;

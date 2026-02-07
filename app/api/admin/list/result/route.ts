@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // app/api/admin/list/result/route.ts
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";

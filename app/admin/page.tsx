@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -241,7 +242,7 @@ export default function AdminPage() {
                               <div className="font-semibold uppercase">
                                 {team.teamname}
                               </div>
-                              {team.members.map((m: any, idx: number) => (
+                              {team.members.map((m: any) => (
                                 <div
                                   key={m.id}
                                   className="text-md text-zinc-600 flex items-center gap-0.5 mt-1">

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import questions from "@/data/ques.json";
 
 export function getRandomQuestions() {
