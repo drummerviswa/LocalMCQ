@@ -23,6 +23,8 @@ export default function QuizPage() {
   const [strikes, setStrikes] = useState(1);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const saved = localStorage.getItem("quiz_questions");
     const savedAnswers = localStorage.getItem("quiz_answers");
 
@@ -75,14 +77,19 @@ export default function QuizPage() {
     document.exitFullscreen();
     window.location.href = "/thankyou";
   };
+
   useExamGuard(
     () => setMalOpen(true),
     () => {
+      if (typeof window === "undefined") return;
+
       alert("Multiple malpractice attempts. Test will end.");
       endTest();
     },
   );
   useFullscreenLock(() => {
+    if (typeof window === "undefined") return;
+
     setMalOpen(true); // your warning dialog
   });
 
