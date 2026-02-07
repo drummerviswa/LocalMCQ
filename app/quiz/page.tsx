@@ -17,6 +17,10 @@ export default function QuizPage() {
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [confirm, setConfirm] = useState(false);
   const [malOpen, setMalOpen] = useState(false);
+  const [teamName, setTeamName] = useState("");
+  const [p1, setP1] = useState("");
+  const [p2, setP2] = useState("");
+  const [strikes, setStrikes] = useState(1);
 
   useEffect(() => {
     const saved = localStorage.getItem("quiz_questions");
@@ -30,6 +34,20 @@ export default function QuizPage() {
       const q = getRandomQuestions();
       localStorage.setItem("quiz_questions", JSON.stringify(q));
       setQuestions(q);
+    }
+
+    // ✅ SAFE localStorage reads
+    const name = localStorage.getItem("teamname") || "";
+    const details = localStorage.getItem("teamDetails");
+    const s = Number(localStorage.getItem("mal_strikes") || "1");
+
+    setTeamName(name);
+    setStrikes(s);
+
+    if (details) {
+      const parsed = JSON.parse(details);
+      setP1(parsed.members[0]?.name || "");
+      setP2(parsed.members[1]?.name || "");
     }
 
     document.documentElement.requestFullscreen();
@@ -81,23 +99,13 @@ export default function QuizPage() {
         {/* Center: Team Info */}
         <div className="flex flex-col items-center">
           <span className="font-bold uppercase tracking-wide">
-            Team{" "}
-            {localStorage.getItem("teamname") &&
-              localStorage.getItem("teamname")}
+            Team {teamName}
           </span>
 
           <span className="text-sm text-zinc-500">
             {localStorage.getItem("teamDetails") && (
               <>
-                {
-                  JSON.parse(localStorage.getItem("teamDetails")!)["members"][0]
-                    .name
-                }
-                {"  |  "}
-                {
-                  JSON.parse(localStorage.getItem("teamDetails")!)["members"][1]
-                    .name
-                }
+                {p1} | {p2}
               </>
             )}
           </span>
@@ -141,7 +149,7 @@ export default function QuizPage() {
       />
       <MalpracticeDialog
         open={malOpen}
-        strikes={Number(localStorage.getItem("mal_strikes") || "1")}
+        strikes={strikes}
         onClose={() => setMalOpen(false)}
       />
     </div>
