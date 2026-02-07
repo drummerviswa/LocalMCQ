@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  username String @unique
+  password String
+  name     String
+}
+
+model Participant {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  regno      String @unique
+  department String
+  course     String
+  branch     String
+  mobileno   String @unique
+  teamId     String
+  team       Team   @relation(fields: [teamId], references: [id])
+}
+
+model Question {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  question String
+  options  String[]
+  answer   String
+}
+
+model Team {
+  id        String        @id @default(auto()) @map("_id") @db.ObjectId
+  teamname  String
+  members   Participant[]
+  quizscore String?
+  timeTaken String?
+  questions Json? // ✅ store shown questions
+  answers   Json? // ✅ store answers map
+}

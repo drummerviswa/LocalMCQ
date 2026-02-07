@@ -1,0 +1,127 @@
+[
+  {
+    "question": "What does HTML stand for?",
+    "options": [
+      "Hyper Text Markup Language",
+      "High Text Machine Language",
+      "Hyper Tool Markup Language",
+      "Home Tool Markup Language"
+    ],
+    "answer": "Hyper Text Markup Language"
+  },
+  {
+    "question": "Which language runs in the browser?",
+    "options": ["Python", "C++", "Java", "JavaScript"],
+    "answer": "JavaScript"
+  },
+  {
+    "question": "Which company developed React?",
+    "options": ["Google", "Facebook", "Microsoft", "Twitter"],
+    "answer": "Facebook"
+  },
+  {
+    "question": "What is the default port of HTTP?",
+    "options": ["80", "3000", "443", "8080"],
+    "answer": "80"
+  },
+  {
+    "question": "Which database is NoSQL?",
+    "options": ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
+    "answer": "MongoDB"
+  },
+  {
+    "question": "Which hook is used for side effects in React?",
+    "options": ["useState", "useEffect", "useMemo", "useRef"],
+    "answer": "useEffect"
+  },
+  {
+    "question": "What does CSS stand for?",
+    "options": [
+      "Creative Style Sheets",
+      "Cascading Style Sheets",
+      "Computer Style Sheets",
+      "Colorful Style Sheets"
+    ],
+    "answer": "Cascading Style Sheets"
+  },
+  {
+    "question": "Which protocol is secure?",
+    "options": ["HTTP", "FTP", "HTTPS", "SMTP"],
+    "answer": "HTTPS"
+  },
+  {
+    "question": "Which keyword is used to declare a constant in JS?",
+    "options": ["var", "let", "const", "static"],
+    "answer": "const"
+  },
+  {
+    "question": "What is Prisma used for?",
+    "options": ["Styling", "ORM", "Routing", "Testing"],
+    "answer": "ORM"
+  },
+  {
+    "question": "Which data type is NOT primitive in JS?",
+    "options": ["String", "Number", "Object", "Boolean"],
+    "answer": "Object"
+  },
+  {
+    "question": "Which symbol is used for comments in JS?",
+    "options": ["//", "#", "<!-- -->", "**"],
+    "answer": "//"
+  },
+  {
+    "question": "Which array method adds item at end?",
+    "options": ["push", "pop", "shift", "concat"],
+    "answer": "push"
+  },
+  {
+    "question": "Which array method removes last item?",
+    "options": ["push", "pop", "shift", "slice"],
+    "answer": "pop"
+  },
+  {
+    "question": "Which method converts JSON to object?",
+    "options": [
+      "JSON.parse()",
+      "JSON.stringify()",
+      "toObject()",
+      "parseJSON()"
+    ],
+    "answer": "JSON.parse()"
+  },
+  {
+    "question": "What does API stand for?",
+    "options": [
+      "Application Programming Interface",
+      "Advanced Programming Interface",
+      "Applied Program Internet",
+      "Application Protocol Interface"
+    ],
+    "answer": "Application Programming Interface"
+  },
+  {
+    "question": "Which status code means Not Found?",
+    "options": ["200", "201", "404", "500"],
+    "answer": "404"
+  },
+  {
+    "question": "Which method is used to send data?",
+    "options": ["GET", "POST", "FETCH", "READ"],
+    "answer": "POST"
+  },
+  {
+    "question": "Binary of decimal 5?",
+    "options": ["101", "110", "111", "100"],
+    "answer": "101"
+  },
+  {
+    "question": "Which is fastest memory?",
+    "options": ["RAM", "ROM", "Cache", "HDD"],
+    "answer": "Cache"
+  },
+  {
+    "question": "Which is an operating system?",
+    "options": ["Chrome", "Windows", "Google", "HTML"],
+    "answer": "Windows"
+  }
+]
