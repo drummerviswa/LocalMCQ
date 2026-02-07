@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
 import ParticipantModal from "@/components/custom/ParticipantModal";
@@ -8,23 +9,21 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [part] = useState(true);
 
-  // Prevent refresh / back
-  useEffect(() => {
-    const handler = (e: BeforeUnloadEvent) => {
-      e.preventDefault();
-      e.returnValue = "";
-    };
-    window.addEventListener("beforeunload", handler);
-    return () => window.removeEventListener("beforeunload", handler);
-  }, []);
+  const [teamName, setTeamName] = useState("");
+  const [p1, setP1] = useState("");
+  const [p2, setP2] = useState("");
 
   useEffect(() => {
-    history.pushState(null, "", location.href);
-    const handlePopState = () => {
-      history.pushState(null, "", location.href);
-    };
-    window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
+    const name = localStorage.getItem("teamname") || "";
+    const details = localStorage.getItem("teamDetails");
+
+    setTeamName(name);
+
+    if (details) {
+      const parsed = JSON.parse(details);
+      setP1(parsed.members[0]?.name || "");
+      setP2(parsed.members[1]?.name || "");
+    }
   }, []);
 
   return (
@@ -37,12 +36,16 @@ export default function Home() {
         <h2 className="text-2xl mt-2 text-blue-600 font-semibold">
           Code Matrix — Round 1
         </h2>
-        Welcome Team {localStorage.getItem("teamname")||""}👋🏻
-        {localStorage.getItem("teamDetails") && (
-          <div className="mt-2 text-sm text-zinc-500">
-            {JSON.parse(localStorage.getItem("teamDetails")!).members[0].name || ""} -{" "}
-            {JSON.parse(localStorage.getItem("teamDetails")!).members[1].name || ""}
-          </div>
+        {teamName && (
+          <>
+            <div className="mt-4 text-xl font-semibold">
+              Welcome Team {teamName} 👋🏻
+            </div>
+
+            <div className="mt-2 text-sm text-zinc-500">
+              {p1} — {p2}
+            </div>
+          </>
         )}
       </div>
 
