@@ -1,127 +1,2002 @@
 [
   {
-    "question": "What does HTML stand for?",
+    "question": "Which data structure uses FIFO order? (Q1)",
     "options": [
-      "Hyper Text Markup Language",
-      "High Text Machine Language",
-      "Hyper Tool Markup Language",
-      "Home Tool Markup Language"
+      "Stack",
+      "Queue",
+      "Tree",
+      "Graph"
     ],
-    "answer": "Hyper Text Markup Language"
+    "answer": "Queue"
   },
   {
-    "question": "Which language runs in the browser?",
-    "options": ["Python", "C++", "Java", "JavaScript"],
-    "answer": "JavaScript"
-  },
-  {
-    "question": "Which company developed React?",
-    "options": ["Google", "Facebook", "Microsoft", "Twitter"],
-    "answer": "Facebook"
-  },
-  {
-    "question": "What is the default port of HTTP?",
-    "options": ["80", "3000", "443", "8080"],
-    "answer": "80"
-  },
-  {
-    "question": "Which database is NoSQL?",
-    "options": ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
-    "answer": "MongoDB"
-  },
-  {
-    "question": "Which hook is used for side effects in React?",
-    "options": ["useState", "useEffect", "useMemo", "useRef"],
-    "answer": "useEffect"
-  },
-  {
-    "question": "What does CSS stand for?",
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q2)",
     "options": [
-      "Creative Style Sheets",
-      "Cascading Style Sheets",
-      "Computer Style Sheets",
-      "Colorful Style Sheets"
+      "5",
+      "6",
+      "Error",
+      "0"
     ],
-    "answer": "Cascading Style Sheets"
+    "answer": "6"
   },
   {
-    "question": "Which protocol is secure?",
-    "options": ["HTTP", "FTP", "HTTPS", "SMTP"],
-    "answer": "HTTPS"
-  },
-  {
-    "question": "Which keyword is used to declare a constant in JS?",
-    "options": ["var", "let", "const", "static"],
-    "answer": "const"
-  },
-  {
-    "question": "What is Prisma used for?",
-    "options": ["Styling", "ORM", "Routing", "Testing"],
-    "answer": "ORM"
-  },
-  {
-    "question": "Which data type is NOT primitive in JS?",
-    "options": ["String", "Number", "Object", "Boolean"],
-    "answer": "Object"
-  },
-  {
-    "question": "Which symbol is used for comments in JS?",
-    "options": ["//", "#", "<!-- -->", "**"],
-    "answer": "//"
-  },
-  {
-    "question": "Which array method adds item at end?",
-    "options": ["push", "pop", "shift", "concat"],
-    "answer": "push"
-  },
-  {
-    "question": "Which array method removes last item?",
-    "options": ["push", "pop", "shift", "slice"],
-    "answer": "pop"
-  },
-  {
-    "question": "Which method converts JSON to object?",
+    "question": "What will Python print?\nprint(2**3**2) (Q3)",
     "options": [
-      "JSON.parse()",
-      "JSON.stringify()",
-      "toObject()",
-      "parseJSON()"
+      "64",
+      "512",
+      "256",
+      "Error"
     ],
-    "answer": "JSON.parse()"
+    "answer": "512"
   },
   {
-    "question": "What does API stand for?",
+    "question": "Which traversal of BST gives sorted order? (Q4)",
     "options": [
-      "Application Programming Interface",
-      "Advanced Programming Interface",
-      "Applied Program Internet",
-      "Application Protocol Interface"
+      "Preorder",
+      "Postorder",
+      "Inorder",
+      "Level order"
     ],
-    "answer": "Application Programming Interface"
+    "answer": "Inorder"
   },
   {
-    "question": "Which status code means Not Found?",
-    "options": ["200", "201", "404", "500"],
-    "answer": "404"
+    "question": "What will Python print?\nprint(bool([])) (Q5)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
   },
   {
-    "question": "Which method is used to send data?",
-    "options": ["GET", "POST", "FETCH", "READ"],
-    "answer": "POST"
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q6)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
   },
   {
-    "question": "Binary of decimal 5?",
-    "options": ["101", "110", "111", "100"],
-    "answer": "101"
+    "question": "Which key uniquely identifies a record? (Q7)",
+    "options": [
+      "Foreign Key",
+      "Primary Key",
+      "Candidate Key",
+      "Composite Key"
+    ],
+    "answer": "Primary Key"
   },
   {
-    "question": "Which is fastest memory?",
-    "options": ["RAM", "ROM", "Cache", "HDD"],
-    "answer": "Cache"
+    "question": "What will Python print?\nprint(2**3**2) (Q8)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
   },
   {
-    "question": "Which is an operating system?",
-    "options": ["Chrome", "Windows", "Google", "HTML"],
-    "answer": "Windows"
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q9)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "Deadlock happens when? (Q10)",
+    "options": [
+      "CPU idle",
+      "Mutual waiting",
+      "Memory leak",
+      "Crash"
+    ],
+    "answer": "Mutual waiting"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q11)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q12)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What is the time complexity of binary search? (Q13)",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(n log n)",
+      "O(1)"
+    ],
+    "answer": "O(log n)"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q14)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q15)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Which SQL command retrieves data? (Q16)",
+    "options": [
+      "INSERT",
+      "SELECT",
+      "DELETE",
+      "UPDATE"
+    ],
+    "answer": "SELECT"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q17)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q18)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "Which memory is volatile? (Q19)",
+    "options": [
+      "ROM",
+      "RAM",
+      "SSD",
+      "HDD"
+    ],
+    "answer": "RAM"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q20)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q21)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "Which data structure uses LIFO order? (Q22)",
+    "options": [
+      "Queue",
+      "Stack",
+      "Heap",
+      "Graph"
+    ],
+    "answer": "Stack"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q23)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q24)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "Which algorithm is used for shortest path? (Q25)",
+    "options": [
+      "DFS",
+      "Prim",
+      "Dijkstra",
+      "Kruskal"
+    ],
+    "answer": "Dijkstra"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q26)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q27)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "Which OOP concept hides data? (Q28)",
+    "options": [
+      "Abstraction",
+      "Encapsulation",
+      "Inheritance",
+      "Polymorphism"
+    ],
+    "answer": "Encapsulation"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q29)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q30)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Which data structure uses FIFO order? (Q31)",
+    "options": [
+      "Stack",
+      "Queue",
+      "Tree",
+      "Graph"
+    ],
+    "answer": "Queue"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q32)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q33)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "Which traversal of BST gives sorted order? (Q34)",
+    "options": [
+      "Preorder",
+      "Postorder",
+      "Inorder",
+      "Level order"
+    ],
+    "answer": "Inorder"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q35)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q36)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "Which key uniquely identifies a record? (Q37)",
+    "options": [
+      "Foreign Key",
+      "Primary Key",
+      "Candidate Key",
+      "Composite Key"
+    ],
+    "answer": "Primary Key"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q38)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q39)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "Deadlock happens when? (Q40)",
+    "options": [
+      "CPU idle",
+      "Mutual waiting",
+      "Memory leak",
+      "Crash"
+    ],
+    "answer": "Mutual waiting"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q41)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q42)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What is the time complexity of binary search? (Q43)",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(n log n)",
+      "O(1)"
+    ],
+    "answer": "O(log n)"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q44)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q45)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Which SQL command retrieves data? (Q46)",
+    "options": [
+      "INSERT",
+      "SELECT",
+      "DELETE",
+      "UPDATE"
+    ],
+    "answer": "SELECT"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q47)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q48)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "Which memory is volatile? (Q49)",
+    "options": [
+      "ROM",
+      "RAM",
+      "SSD",
+      "HDD"
+    ],
+    "answer": "RAM"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q50)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q51)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "Which data structure uses LIFO order? (Q52)",
+    "options": [
+      "Queue",
+      "Stack",
+      "Heap",
+      "Graph"
+    ],
+    "answer": "Stack"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q53)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q54)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "Which algorithm is used for shortest path? (Q55)",
+    "options": [
+      "DFS",
+      "Prim",
+      "Dijkstra",
+      "Kruskal"
+    ],
+    "answer": "Dijkstra"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q56)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q57)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "Which OOP concept hides data? (Q58)",
+    "options": [
+      "Abstraction",
+      "Encapsulation",
+      "Inheritance",
+      "Polymorphism"
+    ],
+    "answer": "Encapsulation"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q59)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q60)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Which data structure uses FIFO order? (Q61)",
+    "options": [
+      "Stack",
+      "Queue",
+      "Tree",
+      "Graph"
+    ],
+    "answer": "Queue"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q62)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q63)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "Which traversal of BST gives sorted order? (Q64)",
+    "options": [
+      "Preorder",
+      "Postorder",
+      "Inorder",
+      "Level order"
+    ],
+    "answer": "Inorder"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q65)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q66)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "Which key uniquely identifies a record? (Q67)",
+    "options": [
+      "Foreign Key",
+      "Primary Key",
+      "Candidate Key",
+      "Composite Key"
+    ],
+    "answer": "Primary Key"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q68)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q69)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "Deadlock happens when? (Q70)",
+    "options": [
+      "CPU idle",
+      "Mutual waiting",
+      "Memory leak",
+      "Crash"
+    ],
+    "answer": "Mutual waiting"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q71)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q72)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What is the time complexity of binary search? (Q73)",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(n log n)",
+      "O(1)"
+    ],
+    "answer": "O(log n)"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q74)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q75)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Which SQL command retrieves data? (Q76)",
+    "options": [
+      "INSERT",
+      "SELECT",
+      "DELETE",
+      "UPDATE"
+    ],
+    "answer": "SELECT"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q77)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q78)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "Which memory is volatile? (Q79)",
+    "options": [
+      "ROM",
+      "RAM",
+      "SSD",
+      "HDD"
+    ],
+    "answer": "RAM"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q80)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q81)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "Which data structure uses LIFO order? (Q82)",
+    "options": [
+      "Queue",
+      "Stack",
+      "Heap",
+      "Graph"
+    ],
+    "answer": "Stack"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q83)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q84)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "Which algorithm is used for shortest path? (Q85)",
+    "options": [
+      "DFS",
+      "Prim",
+      "Dijkstra",
+      "Kruskal"
+    ],
+    "answer": "Dijkstra"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q86)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q87)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "Which OOP concept hides data? (Q88)",
+    "options": [
+      "Abstraction",
+      "Encapsulation",
+      "Inheritance",
+      "Polymorphism"
+    ],
+    "answer": "Encapsulation"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q89)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q90)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Which data structure uses FIFO order? (Q91)",
+    "options": [
+      "Stack",
+      "Queue",
+      "Tree",
+      "Graph"
+    ],
+    "answer": "Queue"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q92)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q93)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "Which traversal of BST gives sorted order? (Q94)",
+    "options": [
+      "Preorder",
+      "Postorder",
+      "Inorder",
+      "Level order"
+    ],
+    "answer": "Inorder"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q95)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q96)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "Which key uniquely identifies a record? (Q97)",
+    "options": [
+      "Foreign Key",
+      "Primary Key",
+      "Candidate Key",
+      "Composite Key"
+    ],
+    "answer": "Primary Key"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q98)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q99)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "Deadlock happens when? (Q100)",
+    "options": [
+      "CPU idle",
+      "Mutual waiting",
+      "Memory leak",
+      "Crash"
+    ],
+    "answer": "Mutual waiting"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q101)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q102)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What is the time complexity of binary search? (Q103)",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(n log n)",
+      "O(1)"
+    ],
+    "answer": "O(log n)"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q104)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q105)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Which SQL command retrieves data? (Q106)",
+    "options": [
+      "INSERT",
+      "SELECT",
+      "DELETE",
+      "UPDATE"
+    ],
+    "answer": "SELECT"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q107)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q108)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "Which memory is volatile? (Q109)",
+    "options": [
+      "ROM",
+      "RAM",
+      "SSD",
+      "HDD"
+    ],
+    "answer": "RAM"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q110)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q111)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "Which data structure uses LIFO order? (Q112)",
+    "options": [
+      "Queue",
+      "Stack",
+      "Heap",
+      "Graph"
+    ],
+    "answer": "Stack"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q113)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q114)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "Which algorithm is used for shortest path? (Q115)",
+    "options": [
+      "DFS",
+      "Prim",
+      "Dijkstra",
+      "Kruskal"
+    ],
+    "answer": "Dijkstra"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q116)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q117)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "Which OOP concept hides data? (Q118)",
+    "options": [
+      "Abstraction",
+      "Encapsulation",
+      "Inheritance",
+      "Polymorphism"
+    ],
+    "answer": "Encapsulation"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q119)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q120)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Which data structure uses FIFO order? (Q121)",
+    "options": [
+      "Stack",
+      "Queue",
+      "Tree",
+      "Graph"
+    ],
+    "answer": "Queue"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q122)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q123)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "Which traversal of BST gives sorted order? (Q124)",
+    "options": [
+      "Preorder",
+      "Postorder",
+      "Inorder",
+      "Level order"
+    ],
+    "answer": "Inorder"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q125)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q126)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "Which key uniquely identifies a record? (Q127)",
+    "options": [
+      "Foreign Key",
+      "Primary Key",
+      "Candidate Key",
+      "Composite Key"
+    ],
+    "answer": "Primary Key"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q128)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q129)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "Deadlock happens when? (Q130)",
+    "options": [
+      "CPU idle",
+      "Mutual waiting",
+      "Memory leak",
+      "Crash"
+    ],
+    "answer": "Mutual waiting"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q131)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q132)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What is the time complexity of binary search? (Q133)",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(n log n)",
+      "O(1)"
+    ],
+    "answer": "O(log n)"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q134)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q135)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Which SQL command retrieves data? (Q136)",
+    "options": [
+      "INSERT",
+      "SELECT",
+      "DELETE",
+      "UPDATE"
+    ],
+    "answer": "SELECT"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q137)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q138)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "Which memory is volatile? (Q139)",
+    "options": [
+      "ROM",
+      "RAM",
+      "SSD",
+      "HDD"
+    ],
+    "answer": "RAM"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q140)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q141)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "Which data structure uses LIFO order? (Q142)",
+    "options": [
+      "Queue",
+      "Stack",
+      "Heap",
+      "Graph"
+    ],
+    "answer": "Stack"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q143)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q144)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "Which algorithm is used for shortest path? (Q145)",
+    "options": [
+      "DFS",
+      "Prim",
+      "Dijkstra",
+      "Kruskal"
+    ],
+    "answer": "Dijkstra"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q146)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q147)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "Which OOP concept hides data? (Q148)",
+    "options": [
+      "Abstraction",
+      "Encapsulation",
+      "Inheritance",
+      "Polymorphism"
+    ],
+    "answer": "Encapsulation"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q149)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q150)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Which data structure uses FIFO order? (Q151)",
+    "options": [
+      "Stack",
+      "Queue",
+      "Tree",
+      "Graph"
+    ],
+    "answer": "Queue"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q152)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q153)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "Which traversal of BST gives sorted order? (Q154)",
+    "options": [
+      "Preorder",
+      "Postorder",
+      "Inorder",
+      "Level order"
+    ],
+    "answer": "Inorder"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q155)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q156)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "Which key uniquely identifies a record? (Q157)",
+    "options": [
+      "Foreign Key",
+      "Primary Key",
+      "Candidate Key",
+      "Composite Key"
+    ],
+    "answer": "Primary Key"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q158)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q159)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "Deadlock happens when? (Q160)",
+    "options": [
+      "CPU idle",
+      "Mutual waiting",
+      "Memory leak",
+      "Crash"
+    ],
+    "answer": "Mutual waiting"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q161)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q162)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What is the time complexity of binary search? (Q163)",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(n log n)",
+      "O(1)"
+    ],
+    "answer": "O(log n)"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q164)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q165)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Which SQL command retrieves data? (Q166)",
+    "options": [
+      "INSERT",
+      "SELECT",
+      "DELETE",
+      "UPDATE"
+    ],
+    "answer": "SELECT"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q167)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q168)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "Which memory is volatile? (Q169)",
+    "options": [
+      "ROM",
+      "RAM",
+      "SSD",
+      "HDD"
+    ],
+    "answer": "RAM"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q170)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q171)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "Which data structure uses LIFO order? (Q172)",
+    "options": [
+      "Queue",
+      "Stack",
+      "Heap",
+      "Graph"
+    ],
+    "answer": "Stack"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q173)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q174)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "Which algorithm is used for shortest path? (Q175)",
+    "options": [
+      "DFS",
+      "Prim",
+      "Dijkstra",
+      "Kruskal"
+    ],
+    "answer": "Dijkstra"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q176)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q177)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "Which OOP concept hides data? (Q178)",
+    "options": [
+      "Abstraction",
+      "Encapsulation",
+      "Inheritance",
+      "Polymorphism"
+    ],
+    "answer": "Encapsulation"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q179)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q180)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Which data structure uses FIFO order? (Q181)",
+    "options": [
+      "Stack",
+      "Queue",
+      "Tree",
+      "Graph"
+    ],
+    "answer": "Queue"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q182)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q183)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "Which traversal of BST gives sorted order? (Q184)",
+    "options": [
+      "Preorder",
+      "Postorder",
+      "Inorder",
+      "Level order"
+    ],
+    "answer": "Inorder"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q185)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q186)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "Which key uniquely identifies a record? (Q187)",
+    "options": [
+      "Foreign Key",
+      "Primary Key",
+      "Candidate Key",
+      "Composite Key"
+    ],
+    "answer": "Primary Key"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q188)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q189)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "Deadlock happens when? (Q190)",
+    "options": [
+      "CPU idle",
+      "Mutual waiting",
+      "Memory leak",
+      "Crash"
+    ],
+    "answer": "Mutual waiting"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q191)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q192)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What is the time complexity of binary search? (Q193)",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(n log n)",
+      "O(1)"
+    ],
+    "answer": "O(log n)"
+  },
+  {
+    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q194)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q195)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Which SQL command retrieves data? (Q196)",
+    "options": [
+      "INSERT",
+      "SELECT",
+      "DELETE",
+      "UPDATE"
+    ],
+    "answer": "SELECT"
+  },
+  {
+    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q197)",
+    "options": [
+      "5",
+      "6",
+      "Error",
+      "0"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What will Python print?\nprint(2**3**2) (Q198)",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "Error"
+    ],
+    "answer": "512"
+  },
+  {
+    "question": "Which memory is volatile? (Q199)",
+    "options": [
+      "ROM",
+      "RAM",
+      "SSD",
+      "HDD"
+    ],
+    "answer": "RAM"
+  },
+  {
+    "question": "What will Python print?\nprint(bool([])) (Q200)",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "answer": "False"
   }
 ]
