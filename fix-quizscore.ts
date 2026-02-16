@@ -17,34 +17,32 @@ async function main() {
         // We need to update the data directly using MongoDB operations
 
         // Use raw MongoDB operations to fix the type
-        const db = prisma.$db;
-
-        const result = await db.collection('Team').updateMany(
-            { quizscore: { $type: 'string' } }, // Find documents where quizscore is a string
-            [
+        const result = await prisma.$runCommandRaw({
+            update: 'Team',
+            updates: [
                 {
-                    $set: {
-                        quizscore: { $toInt: '$quizscore' } // Convert to integer
-                    }
+                    q: { quizscore: { $type: 'string' } },
+                    u: [{ $set: { quizscore: { $toInt: '$quizscore' } } }],
+                    multi: true
                 }
             ]
-        );
+        }) as any;
 
-        console.log(`Updated ${result.modifiedCount} teams with string quizscore`);
+        console.log(`Updated ${result.nModified || 0} teams with string quizscore`);
 
         // Also fix strikes if needed
-        const strikesResult = await db.collection('Team').updateMany(
-            { strikes: { $type: 'string' } },
-            [
+        const strikesResult = await prisma.$runCommandRaw({
+            update: 'Team',
+            updates: [
                 {
-                    $set: {
-                        strikes: { $toInt: '$strikes' }
-                    }
+                    q: { strikes: { $type: 'string' } },
+                    u: [{ $set: { strikes: { $toInt: '$strikes' } } }],
+                    multi: true
                 }
             ]
-        );
+        }) as any;
 
-        console.log(`Updated ${strikesResult.modifiedCount} teams with string strikes`);
+        console.log(`Updated ${strikesResult.nModified || 0} teams with string strikes`);
 
         console.log('✅ Database fix completed successfully!');
     } catch (error) {
