@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
-import AdminLogin from "@/components/custom/AdminLogin";
-import OTP from "@/components/custom/OTP";
-import { useAppSelector } from "../hooks";
-import instance from "@/lib/axios";
-import { AdminNavbar } from "@/components/custom/AdminNavbar";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -14,336 +9,288 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Checkbox } from "@/components/ui/checkbox";
+import { PinDialog } from "@/components/custom/PinDialog";
+import AdminLoginPage from "@/components/custom/AdminLoginPage";
+import { saveAs } from "file-saver";
 import * as XLSX from "xlsx";
-import { Dot } from "lucide-react";
-import DeleteOtpDialog from "@/components/custom/DeleteOtpDialog";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 
 export default function AdminPage() {
-  const otpVerified = useAppSelector((state) => state.admin.otpVerified);
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isPinVerified, setIsPinVerified] = useState(false);
   const [teams, setTeams] = useState<any[]>([]);
-  const [selectedTeam, setSelectedTeam] = useState<any | null>(null);
-  const printRef = useRef<HTMLDivElement>(null);
-  const [deleteOpen, setDeleteOpen] = useState(false);
+  const [selected, setSelected] = useState<any | null>(null);
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [showPinForDelete, setShowPinForDelete] = useState(false);
+  const [deletePendingAction, setDeletePendingAction] = useState<"bulk" | "all" | null>(null);
 
   useEffect(() => {
-    instance
-      .get("/admin/auth/me", { withCredentials: true })
-      .then(() => setIsLoggedIn(true))
-      .catch(() => setIsLoggedIn(false));
+    // Check if already authenticated
+    fetch("/api/admin/auth/me")
+      .then((res) => {
+        if (res.ok) setIsAuthenticated(true);
+        setLoading(false);
+      });
   }, []);
+
+  const fetchTeams = () => {
+    fetch("/api/admin/list/result")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success && Array.isArray(data.teams)) {
+          setTeams(data.teams);
+        } else {
+          setTeams([]);
+        }
+      })
+      .catch((err) => {
+        console.error("Error fetching teams:", err);
+        setTeams([]);
+      });
+  };
 
   useEffect(() => {
-    instance.get("/admin/list/result").then((res) => {
-      setTeams(res.data.teams);
-    });
-  }, []);
+    if (isAuthenticated) {
+      fetchTeams();
+    }
+  }, [isAuthenticated]);
 
-  const sortedTeams = useMemo(
-    () => [...teams].sort((a, b) => Number(b.quizscore) - Number(a.quizscore)),
-    [teams],
+  const eligibleTeams = useMemo(
+    () => teams.filter(t => !t.disqualified).sort((a, b) => b.quizscore - a.quizscore || (Number(a.endTime) - Number(a.startTime)) - (Number(b.endTime) - Number(b.startTime))),
+    [teams]
   );
 
-  const formatTime = (ms: number) =>
-    `${Math.floor(ms / 60000) % 60}m ${Math.floor((ms % 60000) / 1000)}s`;
+  const disqualifiedTeams = useMemo(
+    () => teams.filter(t => t.disqualified).sort((a, b) => a.teamname.localeCompare(b.teamname)),
+    [teams]
+  );
 
-  // ✅ PRINT
-  const handlePrint = () => {
-    const formatTime = (ms: number) =>
-      `${Math.floor(ms / 60000) % 60}m ${Math.floor((ms % 60000) / 1000)}s`;
-
-    const rows = sortedTeams
-      .map((team, i) => {
-        const p1 = team.members[0];
-        const p2 = team.members[1];
-
-        return `
-        <tr>
-          <td>${i + 1}</td>
-          <td>${team.teamname}</td>
-
-          <td>
-            <b>Name:</b> ${p1?.name}<br/>
-            <b>Mob:</b> ${p1?.mobileno}<br/>
-            <b>Dept:</b> ${p1?.department}<br/>
-            <b>Course:</b> ${p1?.course}<br/>
-            <b>Branch:</b> ${p1?.branch}
-          </td>
-
-          <td>
-            <b>Name:</b> ${p2?.name}<br/>
-            <b>Mob:</b> ${p2?.mobileno}<br/>
-            <b>Dept:</b> ${p2?.department}<br/>
-            <b>Course:</b> ${p2?.course}<br/>
-            <b>Branch:</b> ${p2?.branch}
-          </td>
-
-          <td>${team.quizscore} / 20</td>
-          <td>${formatTime(Number(team.timeTaken))}</td>
-        </tr>
-      `;
-      })
-      .join("");
-
-    const win = window.open("", "", "width=900,height=1000");
-
-    if (win) {
-      win.document.write(`
-      <html>
-        <head>
-          <title>Mathrix 26 - Results</title>
-          <style>
-            @page {
-              size: A4 portrait;
-              margin: 15mm;
-            }
-
-            body {
-              font-family: Arial, sans-serif;
-            }
-
-            h1 {
-              text-align: center;
-              font-size: 26px;
-              margin-bottom: 4px;
-            }
-
-            h2 {
-              text-align: center;
-              font-size: 18px;
-              margin-bottom: 20px;
-              font-weight: normal;
-            }
-
-            table {
-              width: 100%;
-              border-collapse: collapse;
-              font-size: 14px;
-            }
-
-            th, td {
-              border: 1px solid #000;
-              padding: 8px;
-              vertical-align: top;
-            }
-
-            th {
-              background: #f0f0f0;
-              font-size: 15px;
-            }
-
-            td {
-              font-size: 13px;
-            }
-          </style>
-        </head>
-
-        <body>
-          <h1>Mathrix 26</h1>
-          <h2>Code Mathrix - Round 1 Results</h2>
-
-          <table>
-            <thead>
-              <tr>
-                <th>Rank</th>
-                <th>Team Name</th>
-                <th>Participant 1 Details</th>
-                <th>Participant 2 Details</th>
-                <th>Score</th>
-                <th>Time</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${rows}
-            </tbody>
-          </table>
-        </body>
-      </html>
-    `);
-
-      win.document.close();
-      win.print();
-    }
+  const formatPlayer = (player: any) => {
+    if (!player) return "N/A";
+    return `${player.name} - ${player.mobileno} - ${player.regno} - ${player.course}`;
   };
 
-  // ✅ XLSX EXPORT
-  const exportExcel = () => {
-    const rows = sortedTeams.map((team, i) => ({
+  const formatTime = (start: number, end: number) => {
+    if (!start || !end) return "N/A";
+    const ms = end - start;
+    const mins = Math.floor(ms / 60000);
+    const secs = Math.floor((ms % 60000) / 1000);
+    const msecs = Math.floor((ms % 1000) / 10);
+    return `${mins}:${secs.toString().padStart(2, '0')}:${msecs.toString().padStart(2, '0')}`;
+  };
+
+  const handleExportPDF = (data: any[], title: string) => {
+    const doc = new jsPDF();
+    doc.text(title, 14, 15);
+    const tableData = data.map((t, i) => [
+      i + 1,
+      t.teamname,
+      formatPlayer(t.members[0]),
+      formatPlayer(t.members[1]),
+      `${t.quizscore}/20`,
+      formatTime(Number(t.startTime), Number(t.endTime)),
+      t.disqualified ? "Disqualified" : "Eligible"
+    ]);
+
+    autoTable(doc, {
+      head: [['Rank', 'Team', 'Player 1', 'Player 2', 'Score', 'Time', 'Status']],
+      body: tableData,
+      startY: 20,
+    });
+    doc.save(`${title.replace(/ /g, '_')}.pdf`);
+  };
+
+  const handleExportExcel = (data: any[], title: string) => {
+    const tableData = data.map((t, i) => ({
       Rank: i + 1,
-      Team: team.teamname,
-      Participant1: `${team.members[0]?.mobileno} - ${team.members[0]?.department} - ${team.members[0]?.course} - ${team.members[0]?.branch}`,
-      Participant2: `${team.members[1]?.mobileno} - ${team.members[1]?.department} - ${team.members[1]?.course} - ${team.members[1]?.branch}`,
-      Score: team.quizscore,
-      Time: formatTime(Number(team.timeTaken)),
+      Team: t.teamname,
+      Player1: formatPlayer(t.members[0]),
+      Player2: formatPlayer(t.members[1]),
+      Score: `${t.quizscore}/20`,
+      Time: formatTime(Number(t.startTime), Number(t.endTime)),
+      Status: t.disqualified ? "Disqualified" : "Eligible"
     }));
 
-    const ws = XLSX.utils.json_to_sheet(rows);
+    const ws = XLSX.utils.json_to_sheet(tableData);
     const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, "Results");
-    XLSX.writeFile(wb, "quiz_results.xlsx");
+    XLSX.utils.book_append_sheet(wb, ws, "Teams");
+    XLSX.writeFile(wb, `${title.replace(/ /g, '_')}.xlsx`);
   };
 
-  if (isLoggedIn === null) return null;
+  const initiateDelete = (type: "bulk" | "all") => {
+    setDeletePendingAction(type);
+    setShowPinForDelete(true);
+  };
 
-  const handleDeleteAll = async () => {
-    if (confirm("Are you sure you want to delete all results?")) {
-      await instance.delete("/admin/list/result", {
-        withCredentials: true,
-      });
-      window.location.reload();
+  const handleVerifiedForDelete = async () => {
+    setShowPinForDelete(false);
+    const res = await fetch("/api/admin/list/result", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        pin: "3010",
+        ids: deletePendingAction === "bulk" ? selectedIds : []
+      })
+    });
+
+    if (res.ok) {
+      fetchTeams();
+      setSelectedIds([]);
     }
+    setDeletePendingAction(null);
   };
+
+  const toggleSelect = (id: string) => {
+    setSelectedIds(prev => prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]);
+  };
+
+  if (loading) return <div className="flex items-center justify-center min-h-screen">Loading...</div>;
+
+  if (!isPinVerified) {
+    return <PinDialog open={true} onVerified={() => setIsPinVerified(true)} />;
+  }
+
+  if (!isAuthenticated) {
+    return <AdminLoginPage onLogin={() => setIsAuthenticated(true)} />;
+  }
+
+  const TeamTable = ({ data, title, showRank }: { data: any[], title: string, showRank: boolean }) => (
+    <div className="mb-12">
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-2xl font-bold">{title}</h2>
+        <div className="flex gap-2">
+          <Button variant="outline" size="sm" onClick={() => handleExportPDF(data, title)}>PDF</Button>
+          <Button variant="outline" size="sm" onClick={() => handleExportExcel(data, title)}>Excel</Button>
+        </div>
+      </div>
+      <div className="border rounded-lg overflow-x-auto bg-white shadow-sm">
+        <table className="w-full text-sm">
+          <thead className="bg-zinc-100">
+            <tr>
+              <th className="p-3 text-left w-10"></th>
+              {showRank && <th className="p-3 text-left">Rank</th>}
+              <th className="p-3 text-left">Team Name</th>
+              <th className="p-3 text-left">Player 1 Details</th>
+              <th className="p-3 text-left">Player 2 Details</th>
+              <th className="p-3 text-left">Score</th>
+              <th className="p-3 text-left">Time</th>
+              <th className="p-3 text-left">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.length === 0 ? (
+              <tr><td colSpan={8} className="p-8 text-center text-zinc-500 italic">No teams found</td></tr>
+            ) : data.map((t, i) => (
+              <tr key={t.id} className="border-t hover:bg-zinc-50">
+                <td className="p-3">
+                  <Checkbox checked={selectedIds.includes(t.id)} onCheckedChange={() => toggleSelect(t.id)} />
+                </td>
+                {showRank && <td className="p-3 font-semibold">#{i + 1}</td>}
+                <td className="p-3">{t.teamname}</td>
+                <td className="p-3 text-xs">{formatPlayer(t.members[0])}</td>
+                <td className="p-3 text-xs">{formatPlayer(t.members[1])}</td>
+                <td className="p-3 font-medium">{t.quizscore} / 20</td>
+                <td className="p-3">{formatTime(Number(t.startTime), Number(t.endTime))}</td>
+                <td className="p-3">
+                  <Button variant="ghost" size="sm" onClick={() => setSelected(t)}>View</Button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 
   return (
-    <div>
-      {isLoggedIn ? (
-        <>
-          <AdminNavbar onDeleteClick={() => setDeleteOpen(true)} />
-
-          {sortedTeams.length === 0 ? (
-            <div className="p-10 text-center">
-              <h2 className="text-2xl font-semibold">No results found</h2>
-              <p className="text-zinc-600 mt-2">
-                Teams will appear here once they start participating in the
-                quiz.
-              </p>
-            </div>
-          ) : (
-            <div>
-              <div className="p-10 space-y-6">
-                <div className="flex justify-between items-center">
-                  <h1 className="text-3xl font-bold">Quiz Results</h1>
-                  <div className="flex gap-3">
-                    <Button onClick={handlePrint}>Print</Button>
-                    <Button onClick={exportExcel}>Export XLSX</Button>
-                  </div>
-                </div>
-
-                {/* Printable Area */}
-                <div ref={printRef}>
-                  <div className="overflow-auto border rounded-lg shadow">
-                    <table className="w-full text-sm">
-                      <thead className="bg-zinc-100">
-                        <tr>
-                          <th className="p-3 text-left">Rank</th>
-                          <th className="p-3 text-left">Team & Participants</th>
-                          <th className="p-3 text-left">Score</th>
-                          <th className="p-3 text-left">Time</th>
-                          <th className="p-3 text-left">Detailed</th>
-                        </tr>
-                      </thead>
-
-                      <tbody>
-                        {sortedTeams.map((team, i) => (
-                          <tr key={team.id} className="border-t">
-                            <td className="p-3 font-semibold">#{i + 1}</td>
-
-                            <td className="p-3">
-                              <div className="font-semibold uppercase">
-                                {team.teamname}
-                              </div>
-                              {team.members.map((m: any) => (
-                                <div
-                                  key={m.id}
-                                  className="text-md text-zinc-600 flex items-center gap-0.5 mt-1">
-                                  <Dot />
-                                  <span className="font-semibold">
-                                    {m.name}
-                                  </span>{" "}
-                                  —{" "}
-                                  <span className="font-semibold">
-                                    {m.mobileno}
-                                  </span>{" "}
-                                  — {m.regno} — {m.department} — {m.course} —{" "}
-                                  {m.branch}
-                                </div>
-                              ))}
-                            </td>
-
-                            <td className="p-3">{team.quizscore} / 20</td>
-                            <td className="p-3">
-                              {Math.floor(Number(team.timeTaken) / 60000) % 60}m{" "}
-                              {Math.floor(
-                                (Number(team.timeTaken) % 60000) / 1000,
-                              )}{" "}
-                              s
-                            </td>
-
-                            <td className="p-3">
-                              <Button
-                                size="sm"
-                                onClick={() => setSelectedTeam(team)}>
-                                View
-                              </Button>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-
-              {/* Detailed Modal */}
-              {selectedTeam && (
-                <Dialog open onOpenChange={() => setSelectedTeam(null)}>
-                  <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto no-scrollbar">
-                    <DialogHeader>
-                      <DialogTitle>
-                        {selectedTeam.teamname} — {selectedTeam.quizscore}/20 —{" "}
-                        {formatTime(Number(selectedTeam.timeTaken))}
-                      </DialogTitle>
-                    </DialogHeader>
-
-                    <div className="space-y-4">
-                      {selectedTeam.questions?.map((q: any, i: number) => {
-                        const correct = q.answer;
-                        const given = selectedTeam.answers[i];
-
-                        return (
-                          <div key={i} className="border p-3 rounded">
-                            <p className="font-medium">
-                              {i + 1}. {q.question}
-                            </p>
-
-                            <p className="text-sm mt-2">
-                              <b>Correct:</b>{" "}
-                              <span className="text-green-600">{correct}</span>
-                            </p>
-
-                            <p className="text-sm">
-                              <b>Answered:</b>{" "}
-                              <span
-                                className={
-                                  !given
-                                    ? "text-yellow-600 font-semibold"
-                                    : correct === given
-                                      ? "text-green-600"
-                                      : "text-red-600"
-                                }>
-                                {given || "Not Answered"}
-                              </span>
-                            </p>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              )}
-              <DeleteOtpDialog
-                open={deleteOpen}
-                onClose={() => setDeleteOpen(false)}
-                onSuccess={handleDeleteAll}
-              />
-            </div>
+    <div className="p-10 bg-zinc-50 min-h-screen">
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-4xl font-extrabold tracking-tight">Admin Dashboard</h1>
+        <div className="flex gap-2">
+          {selectedIds.length > 0 && (
+            <Button variant="destructive" onClick={() => initiateDelete("bulk")}>
+              Delete Selected ({selectedIds.length})
+            </Button>
           )}
-        </>
-      ) : otpVerified ? (
-        <AdminLogin open />
-      ) : (
-        <OTP />
+          <Button variant="destructive" onClick={() => initiateDelete("all")}>
+            Delete All Teams
+          </Button>
+          <Button variant="outline" onClick={async () => { await fetch("/api/admin/auth/logout"); window.location.reload(); }}>
+            Logout
+          </Button>
+        </div>
+      </div>
+
+      <TeamTable data={eligibleTeams} title="Eligible Teams" showRank={true} />
+      <TeamTable data={disqualifiedTeams} title="Disqualified Teams" showRank={false} />
+
+      {/* Detailed View */}
+      {selected && (
+        <Dialog open onOpenChange={() => setSelected(null)}>
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-2xl">
+                {selected.teamname} — Details (Score: {selected.quizscore}/20)
+              </DialogTitle>
+            </DialogHeader>
+
+            <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-zinc-100 rounded-lg">
+              <div>
+                <p className="font-bold border-b mb-2 pb-1">Player 1</p>
+                <p className="text-sm">{formatPlayer(selected.members[0])}</p>
+                <p className="text-sm"><b>Dept:</b> {selected.members[0]?.department} | <b>Branch:</b> {selected.members[0]?.branch}</p>
+              </div>
+              <div>
+                <p className="font-bold border-b mb-2 pb-1">Player 2</p>
+                <p className="text-sm">{formatPlayer(selected.members[1])}</p>
+                <p className="text-sm"><b>Dept:</b> {selected.members[1]?.department} | <b>Branch:</b> {selected.members[1]?.branch}</p>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold">Question Response History</h3>
+              {selected.questions?.map((qid: string, i: number) => {
+                const ans = selected.answers.find((a: any) => a.qid === qid);
+                const isCorrect = ans?.answer === ans?.question?.answer;
+                return (
+                  <div key={i} className={`border p-4 rounded-lg ${ans ? (isCorrect ? 'border-green-200 bg-green-50' : 'border-red-200 bg-red-50') : 'bg-gray-50 border-gray-200'}`}>
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="bg-white px-2 py-0.5 rounded text-xs font-bold shadow-sm">Q{i + 1} ({ans?.question?.category || 'General'})</span>
+                      {ans ? (
+                        isCorrect ? <span className="text-green-600 font-bold text-xs">✓ CORRECT</span> : <span className="text-red-600 font-bold text-xs">✗ WRONG</span>
+                      ) : (
+                        <span className="text-gray-500 font-bold text-xs italic">NOT ANSWERED</span>
+                      )}
+                    </div>
+                    <p className="font-medium text-zinc-900 mb-3">{ans?.question?.question || "Question data unavailable (Deleted or shifted?)"}</p>
+
+                    <div className="grid grid-cols-2 gap-4 text-sm mt-2 pt-2 border-t border-black/5">
+                      <div>
+                        <span className="text-zinc-500 block text-[10px] uppercase font-bold">Team Answered</span>
+                        <span className={`font-bold ${!ans ? 'text-gray-400 italic' : (isCorrect ? 'text-green-700' : 'text-red-700')}`}>
+                          {ans?.answer || "No attempt recorded"}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-zinc-500 block text-[10px] uppercase font-bold">Correct Answer</span>
+                        <span className="font-bold text-zinc-800">
+                          {ans?.question?.answer || "N/A"}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </DialogContent>
+        </Dialog>
       )}
+
+      {/* PIN check for deletion */}
+      <PinDialog open={showPinForDelete} onVerified={handleVerifiedForDelete} />
     </div>
   );
 }

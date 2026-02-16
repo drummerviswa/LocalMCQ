@@ -1,7 +1,18 @@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 
-export default function QuestionBox({ q, index, answer, setAnswer }) {
+interface QuestionBoxProps {
+  q: {
+    id: string;
+    question: string;
+    options: string[];
+  };
+  index: number;
+  answer?: string;
+  setAnswer: (val: string) => void;
+}
+
+export default function QuestionBox({ q, index, answer, setAnswer }: QuestionBoxProps) {
   return (
     <div className="bg-white dark:bg-zinc-950 border rounded-xl shadow-sm p-6">
       <p className="font-semibold text-lg mb-4">
@@ -10,7 +21,7 @@ export default function QuestionBox({ q, index, answer, setAnswer }) {
 
       <RadioGroup
         value={answer || ""}
-        onValueChange={(val) => setAnswer(index, val)}
+        onValueChange={(val) => setAnswer(val)}
         className="space-y-3"
       >
         {q.options.map((opt, i) => (

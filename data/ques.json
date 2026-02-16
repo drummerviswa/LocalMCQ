@@ -1,2002 +1,3302 @@
 [
   {
-    "question": "Which data structure uses FIFO order? (Q1)",
+    "question": "What is the output of printf(\"%d\", 10 > 5 > 2) in C?",
+    "options": [
+      "1",
+      "0",
+      "5",
+      "True"
+    ],
+    "answer": "0",
+    "category": "Output"
+  },
+  {
+    "question": "What will be the output of print(2 ** 3 ** 2) in Python?",
+    "options": [
+      "64",
+      "512",
+      "256",
+      "128"
+    ],
+    "answer": "512",
+    "category": "Output"
+  },
+  {
+    "question": "What is the output of console.log(typeof null) in JavaScript?",
+    "options": [
+      "null",
+      "undefined",
+      "object",
+      "number"
+    ],
+    "answer": "object",
+    "category": "Output"
+  },
+  {
+    "question": "What will be printed: int x = 5; printf(\"%d\", x++);",
+    "options": [
+      "5",
+      "6",
+      "4",
+      "Error"
+    ],
+    "answer": "5",
+    "category": "Output"
+  },
+  {
+    "question": "What is the output of print(\"Hello\" * 3) in Python?",
+    "options": [
+      "HelloHelloHello",
+      "Hello3",
+      "Error",
+      "Hello Hello Hello"
+    ],
+    "answer": "HelloHelloHello",
+    "category": "Output"
+  },
+  {
+    "question": "What will System.out.println(10/3) print in Java?",
+    "options": [
+      "3",
+      "3.33",
+      "3.0",
+      "4"
+    ],
+    "answer": "3",
+    "category": "Output"
+  },
+  {
+    "question": "What is the output of printf(\"%d\", sizeof(int)) on most systems?",
+    "options": [
+      "2",
+      "4",
+      "8",
+      "16"
+    ],
+    "answer": "4",
+    "category": "Output"
+  },
+  {
+    "question": "What will be the output of print([1,2,3] + [4,5,6]) in Python?",
+    "options": [
+      "[5,7,9]",
+      "[1,2,3,4,5,6]",
+      "Error",
+      "[1,2,3][4,5,6]"
+    ],
+    "answer": "[1,2,3,4,5,6]",
+    "category": "Output"
+  },
+  {
+    "question": "What is the output of console.log(0.1 + 0.2 === 0.3) in JavaScript?",
+    "options": [
+      "true",
+      "false",
+      "undefined",
+      "NaN"
+    ],
+    "answer": "false",
+    "category": "Output"
+  },
+  {
+    "question": "What will printf(\"%c\", 65) print?",
+    "options": [
+      "65",
+      "A",
+      "a",
+      "Error"
+    ],
+    "answer": "A",
+    "category": "Output"
+  },
+  {
+    "question": "What is the output of print(bool('False')) in Python?",
+    "options": [
+      "False",
+      "True",
+      "0",
+      "Error"
+    ],
+    "answer": "True",
+    "category": "Output"
+  },
+  {
+    "question": "What will be the output of System.out.println('A' + 1) in Java?",
+    "options": [
+      "A1",
+      "B",
+      "66",
+      "Error"
+    ],
+    "answer": "66",
+    "category": "Output"
+  },
+  {
+    "question": "What is the output of printf(\"%d\", 5 & 3)?",
+    "options": [
+      "1",
+      "3",
+      "5",
+      "8"
+    ],
+    "answer": "1",
+    "category": "Output"
+  },
+  {
+    "question": "What will print(10 // 3) output in Python?",
+    "options": [
+      "3",
+      "3.33",
+      "4",
+      "3.0"
+    ],
+    "answer": "3",
+    "category": "Output"
+  },
+  {
+    "question": "What is the output of console.log([] == ![]) in JavaScript?",
+    "options": [
+      "true",
+      "false",
+      "undefined",
+      "Error"
+    ],
+    "answer": "true",
+    "category": "Output"
+  },
+  {
+    "question": "What will be the output of printf(\"%d\", -5 % 2)?",
+    "options": [
+      "-1",
+      "1",
+      "-2",
+      "2"
+    ],
+    "answer": "-1",
+    "category": "Output"
+  },
+  {
+    "question": "What is the output of print(\"ABC\".lower()) in Python?",
+    "options": [
+      "abc",
+      "ABC",
+      "Abc",
+      "Error"
+    ],
+    "answer": "abc",
+    "category": "Output"
+  },
+  {
+    "question": "What will System.out.println(true & false) print in Java?",
+    "options": [
+      "true",
+      "false",
+      "1",
+      "0"
+    ],
+    "answer": "false",
+    "category": "Output"
+  },
+  {
+    "question": "What is the output of printf(\"%d\", 1 << 3)?",
+    "options": [
+      "3",
+      "4",
+      "8",
+      "16"
+    ],
+    "answer": "8",
+    "category": "Output"
+  },
+  {
+    "question": "What will be the output of print(3 * 'a' in 'aaa') in Python?",
+    "options": [
+      "True",
+      "False",
+      "aaa",
+      "Error"
+    ],
+    "answer": "True",
+    "category": "Output"
+  },
+  {
+    "question": "What is the output of console.log(typeof NaN) in JavaScript?",
+    "options": [
+      "NaN",
+      "number",
+      "undefined",
+      "object"
+    ],
+    "answer": "number",
+    "category": "Output"
+  },
+  {
+    "question": "What will printf(\"%s\", \"Hello\" + 2) output?",
+    "options": [
+      "Hello2",
+      "llo",
+      "Error",
+      "Hello"
+    ],
+    "answer": "llo",
+    "category": "Output"
+  },
+  {
+    "question": "What is the output of print(list(range(3))) in Python?",
+    "options": [
+      "[0,1,2]",
+      "[1,2,3]",
+      "[0,1,2,3]",
+      "Error"
+    ],
+    "answer": "[0,1,2]",
+    "category": "Output"
+  },
+  {
+    "question": "What will be the output of System.out.println(10 ^ 2) in Java?",
+    "options": [
+      "100",
+      "8",
+      "12",
+      "20"
+    ],
+    "answer": "8",
+    "category": "Output"
+  },
+  {
+    "question": "What is the output of printf(\"%d\", 15 | 7)?",
+    "options": [
+      "15",
+      "7",
+      "22",
+      "8"
+    ],
+    "answer": "15",
+    "category": "Output"
+  },
+  {
+    "question": "What will print('Hello'[1:4]) output in Python?",
+    "options": [
+      "ell",
+      "Hell",
+      "ello",
+      "Hel"
+    ],
+    "answer": "ell",
+    "category": "Output"
+  },
+  {
+    "question": "What is the output of console.log(1 + '1') in JavaScript?",
+    "options": [
+      "2",
+      "11",
+      "1",
+      "Error"
+    ],
+    "answer": "11",
+    "category": "Output"
+  },
+  {
+    "question": "What will printf(\"%f\", 5/2) output?",
+    "options": [
+      "2.5",
+      "2.0",
+      "2.500000",
+      "0.000000"
+    ],
+    "answer": "0.000000",
+    "category": "Output"
+  },
+  {
+    "question": "What is the output of print({1,2,2,3}) in Python?",
+    "options": [
+      "{1,2,2,3}",
+      "{1,2,3}",
+      "Error",
+      "[1,2,3]"
+    ],
+    "answer": "{1,2,3}",
+    "category": "Output"
+  },
+  {
+    "question": "What will be the output of System.out.println(!true) in Java?",
+    "options": [
+      "true",
+      "false",
+      "!true",
+      "Error"
+    ],
+    "answer": "false",
+    "category": "Output"
+  },
+  {
+    "question": "Which of the following is NOT a valid variable name in Python?",
+    "options": [
+      "_var",
+      "var1",
+      "1var",
+      "var_1"
+    ],
+    "answer": "1var",
+    "category": "Programming"
+  },
+  {
+    "question": "What is the correct syntax to output \"Hello World\" in Java?",
+    "options": [
+      "echo \"Hello World\";",
+      "System.out.println(\"Hello World\");",
+      "print(\"Hello World\")",
+      "Console.WriteLine(\"Hello World\");"
+    ],
+    "answer": "System.out.println(\"Hello World\");",
+    "category": "Programming"
+  },
+  {
+    "question": "Which operator is used for exponentiation in Python?",
+    "options": [
+      "^",
+      "**",
+      "//",
+      "%%"
+    ],
+    "answer": "**",
+    "category": "Programming"
+  },
+  {
+    "question": "What keyword is used to define a function in Python?",
+    "options": [
+      "function",
+      "def",
+      "func",
+      "define"
+    ],
+    "answer": "def",
+    "category": "Programming"
+  },
+  {
+    "question": "In C, what is the correct way to declare a pointer to an integer?",
+    "options": [
+      "int *ptr;",
+      "int ptr*;",
+      "pointer int ptr;",
+      "*int ptr;"
+    ],
+    "answer": "int *ptr;",
+    "category": "Programming"
+  },
+  {
+    "question": "Which data type is used to create a variable that should store text in Java?",
+    "options": [
+      "string",
+      "String",
+      "Text",
+      "char"
+    ],
+    "answer": "String",
+    "category": "Programming"
+  },
+  {
+    "question": "What is the purpose of the 'break' statement?",
+    "options": [
+      "Exit a loop",
+      "Continue to next iteration",
+      "Pause execution",
+      "Return a value"
+    ],
+    "answer": "Exit a loop",
+    "category": "Programming"
+  },
+  {
+    "question": "Which symbol is used for single-line comments in C++?",
+    "options": [
+      "#",
+      "//",
+      "/*",
+      "--"
+    ],
+    "answer": "//",
+    "category": "Programming"
+  },
+  {
+    "question": "What is the default return type of a function in C if not specified?",
+    "options": [
+      "void",
+      "int",
+      "float",
+      "char"
+    ],
+    "answer": "int",
+    "category": "Programming"
+  },
+  {
+    "question": "Which loop is guaranteed to execute at least once?",
+    "options": [
+      "for loop",
+      "while loop",
+      "do-while loop",
+      "foreach loop"
+    ],
+    "answer": "do-while loop",
+    "category": "Programming"
+  },
+  {
+    "question": "What is the correct way to create an array in Java?",
+    "options": [
+      "int[] arr = new int[5];",
+      "array int arr[5];",
+      "int arr = new array[5];",
+      "arr[] = int[5];"
+    ],
+    "answer": "int[] arr = new int[5];",
+    "category": "Programming"
+  },
+  {
+    "question": "Which keyword is used to prevent method overriding in Java?",
+    "options": [
+      "static",
+      "final",
+      "const",
+      "sealed"
+    ],
+    "answer": "final",
+    "category": "Programming"
+  },
+  {
+    "question": "What does 'null' represent in programming?",
+    "options": [
+      "Zero",
+      "Empty string",
+      "No value or reference",
+      "False"
+    ],
+    "answer": "No value or reference",
+    "category": "Programming"
+  },
+  {
+    "question": "Which operator checks both value and type in JavaScript?",
+    "options": [
+      "==",
+      "===",
+      "!=",
+      "="
+    ],
+    "answer": "===",
+    "category": "Programming"
+  },
+  {
+    "question": "What is recursion in programming?",
+    "options": [
+      "Loop structure",
+      "Function calling itself",
+      "Multiple inheritance",
+      "Error handling"
+    ],
+    "answer": "Function calling itself",
+    "category": "Programming"
+  },
+  {
+    "question": "Which access modifier makes a member accessible only within the same class?",
+    "options": [
+      "public",
+      "private",
+      "protected",
+      "default"
+    ],
+    "answer": "private",
+    "category": "Programming"
+  },
+  {
+    "question": "What is the ternary operator syntax in C?",
+    "options": [
+      "if ? then : else",
+      "condition ? true : false",
+      "? condition : value",
+      "condition then ? else :"
+    ],
+    "answer": "condition ? true : false",
+    "category": "Programming"
+  },
+  {
+    "question": "Which method is called when an object is created in Python?",
+    "options": [
+      "__init__",
+      "__new__",
+      "__create__",
+      "__start__"
+    ],
+    "answer": "__init__",
+    "category": "Programming"
+  },
+  {
+    "question": "What is the purpose of 'static' keyword in Java?",
+    "options": [
+      "Make variable constant",
+      "Create class-level members",
+      "Prevent inheritance",
+      "Enable overriding"
+    ],
+    "answer": "Create class-level members",
+    "category": "Programming"
+  },
+  {
+    "question": "Which symbol is used for namespace resolution in C++?",
+    "options": [
+      ".",
+      "::",
+      "->",
+      "#"
+    ],
+    "answer": "::",
+    "category": "Programming"
+  },
+  {
+    "question": "What is type casting?",
+    "options": [
+      "Creating new types",
+      "Converting one data type to another",
+      "Type checking",
+      "Memory allocation"
+    ],
+    "answer": "Converting one data type to another",
+    "category": "Programming"
+  },
+  {
+    "question": "Which statement is used to handle exceptions in Python?",
+    "options": [
+      "catch",
+      "try-except",
+      "handle-error",
+      "throw-catch"
+    ],
+    "answer": "try-except",
+    "category": "Programming"
+  },
+  {
+    "question": "What does 'void' return type indicate?",
+    "options": [
+      "Returns null",
+      "Returns nothing",
+      "Returns zero",
+      "Returns empty string"
+    ],
+    "answer": "Returns nothing",
+    "category": "Programming"
+  },
+  {
+    "question": "Which operator is used to access structure members via pointer in C?",
+    "options": [
+      ".",
+      "->",
+      "::",
+      "*"
+    ],
+    "answer": "->",
+    "category": "Programming"
+  },
+  {
+    "question": "What is the 'this' keyword in Java?",
+    "options": [
+      "Refers to superclass",
+      "Refers to current object",
+      "Creates new object",
+      "Static reference"
+    ],
+    "answer": "Refers to current object",
+    "category": "Programming"
+  },
+  {
+    "question": "Which loop is most suitable when the number of iterations is known?",
+    "options": [
+      "while",
+      "do-while",
+      "for",
+      "infinite"
+    ],
+    "answer": "for",
+    "category": "Programming"
+  },
+  {
+    "question": "What is the scope of a local variable?",
+    "options": [
+      "Entire program",
+      "Within the block it's declared",
+      "Within the class",
+      "Within the file"
+    ],
+    "answer": "Within the block it's declared",
+    "category": "Programming"
+  },
+  {
+    "question": "Which keyword is used to inherit a class in Java?",
+    "options": [
+      "inherits",
+      "extends",
+      "implements",
+      "derives"
+    ],
+    "answer": "extends",
+    "category": "Programming"
+  },
+  {
+    "question": "What is a lambda function?",
+    "options": [
+      "Named function",
+      "Anonymous function",
+      "Recursive function",
+      "Library function"
+    ],
+    "answer": "Anonymous function",
+    "category": "Programming"
+  },
+  {
+    "question": "Which escape sequence represents a newline character?",
+    "options": [
+      "\\t",
+      "\\n",
+      "\\r",
+      "\\b"
+    ],
+    "answer": "\\n",
+    "category": "Programming"
+  },
+  {
+    "question": "What does SQL stand for?",
+    "options": [
+      "Simple Query Language",
+      "Structured Query Language",
+      "Standard Query Language",
+      "System Query Language"
+    ],
+    "answer": "Structured Query Language",
+    "category": "DBMS"
+  },
+  {
+    "question": "Which SQL command is used to retrieve data from a database?",
+    "options": [
+      "GET",
+      "SELECT",
+      "FETCH",
+      "RETRIEVE"
+    ],
+    "answer": "SELECT",
+    "category": "DBMS"
+  },
+  {
+    "question": "What is a primary key?",
+    "options": [
+      "First column in table",
+      "Unique identifier for records",
+      "Foreign key reference",
+      "Index column"
+    ],
+    "answer": "Unique identifier for records",
+    "category": "DBMS"
+  },
+  {
+    "question": "Which normal form eliminates transitive dependencies?",
+    "options": [
+      "1NF",
+      "2NF",
+      "3NF",
+      "BCNF"
+    ],
+    "answer": "3NF",
+    "category": "DBMS"
+  },
+  {
+    "question": "What is the purpose of a foreign key?",
+    "options": [
+      "Unique identification",
+      "Link tables together",
+      "Index data",
+      "Sort records"
+    ],
+    "answer": "Link tables together",
+    "category": "DBMS"
+  },
+  {
+    "question": "Which command is used to add new records to a table?",
+    "options": [
+      "ADD",
+      "INSERT",
+      "UPDATE",
+      "CREATE"
+    ],
+    "answer": "INSERT",
+    "category": "DBMS"
+  },
+  {
+    "question": "What does ACID stand for in database transactions?",
+    "options": [
+      "Atomicity, Consistency, Isolation, Durability",
+      "Access, Control, Integration, Data",
+      "Automatic, Consistent, Independent, Durable",
+      "All, Create, Insert, Delete"
+    ],
+    "answer": "Atomicity, Consistency, Isolation, Durability",
+    "category": "DBMS"
+  },
+  {
+    "question": "Which JOIN returns all records when there is a match in either table?",
+    "options": [
+      "INNER JOIN",
+      "LEFT JOIN",
+      "RIGHT JOIN",
+      "FULL OUTER JOIN"
+    ],
+    "answer": "FULL OUTER JOIN",
+    "category": "DBMS"
+  },
+  {
+    "question": "What is a view in SQL?",
+    "options": [
+      "Physical table",
+      "Virtual table",
+      "Index",
+      "Constraint"
+    ],
+    "answer": "Virtual table",
+    "category": "DBMS"
+  },
+  {
+    "question": "Which clause is used to filter groups in SQL?",
+    "options": [
+      "WHERE",
+      "FILTER",
+      "HAVING",
+      "GROUP BY"
+    ],
+    "answer": "HAVING",
+    "category": "DBMS"
+  },
+  {
+    "question": "What is denormalization?",
+    "options": [
+      "Removing normalization",
+      "Adding redundancy for performance",
+      "Data validation",
+      "Creating indexes"
+    ],
+    "answer": "Adding redundancy for performance",
+    "category": "DBMS"
+  },
+  {
+    "question": "Which command is used to modify existing records?",
+    "options": [
+      "MODIFY",
+      "UPDATE",
+      "CHANGE",
+      "ALTER"
+    ],
+    "answer": "UPDATE",
+    "category": "DBMS"
+  },
+  {
+    "question": "What is a stored procedure?",
+    "options": [
+      "Stored data",
+      "Precompiled SQL code",
+      "Backup file",
+      "Index type"
+    ],
+    "answer": "Precompiled SQL code",
+    "category": "DBMS"
+  },
+  {
+    "question": "Which isolation level prevents dirty reads?",
+    "options": [
+      "Read Uncommitted",
+      "Read Committed",
+      "Repeatable Read",
+      "Serializable"
+    ],
+    "answer": "Read Committed",
+    "category": "DBMS"
+  },
+  {
+    "question": "What is a composite key?",
+    "options": [
+      "Multiple tables",
+      "Key with multiple columns",
+      "Encrypted key",
+      "Index key"
+    ],
+    "answer": "Key with multiple columns",
+    "category": "DBMS"
+  },
+  {
+    "question": "Which command removes all records from a table but keeps structure?",
+    "options": [
+      "DELETE",
+      "DROP",
+      "TRUNCATE",
+      "REMOVE"
+    ],
+    "answer": "TRUNCATE",
+    "category": "DBMS"
+  },
+  {
+    "question": "What is a trigger in database?",
+    "options": [
+      "User action",
+      "Automatic procedure on event",
+      "Query execution",
+      "Backup process"
+    ],
+    "answer": "Automatic procedure on event",
+    "category": "DBMS"
+  },
+  {
+    "question": "Which constraint ensures a column cannot have NULL values?",
+    "options": [
+      "UNIQUE",
+      "CHECK",
+      "NOT NULL",
+      "DEFAULT"
+    ],
+    "answer": "NOT NULL",
+    "category": "DBMS"
+  },
+  {
+    "question": "What is an index in database?",
+    "options": [
+      "Table reference",
+      "Data structure for fast retrieval",
+      "Primary key",
+      "Foreign key"
+    ],
+    "answer": "Data structure for fast retrieval",
+    "category": "DBMS"
+  },
+  {
+    "question": "Which SQL function returns the number of rows?",
+    "options": [
+      "SUM()",
+      "COUNT()",
+      "TOTAL()",
+      "NUM()"
+    ],
+    "answer": "COUNT()",
+    "category": "DBMS"
+  },
+  {
+    "question": "What is a deadlock?",
+    "options": [
+      "Database crash",
+      "Two transactions waiting for each other",
+      "Slow query",
+      "Connection timeout"
+    ],
+    "answer": "Two transactions waiting for each other",
+    "category": "DBMS"
+  },
+  {
+    "question": "Which JOIN returns all records from left table?",
+    "options": [
+      "INNER JOIN",
+      "LEFT JOIN",
+      "RIGHT JOIN",
+      "CROSS JOIN"
+    ],
+    "answer": "LEFT JOIN",
+    "category": "DBMS"
+  },
+  {
+    "question": "What is the purpose of ROLLBACK command?",
+    "options": [
+      "Save changes",
+      "Undo transaction",
+      "Backup database",
+      "Restore database"
+    ],
+    "answer": "Undo transaction",
+    "category": "DBMS"
+  },
+  {
+    "question": "Which clause is used to sort results?",
+    "options": [
+      "SORT BY",
+      "ORDER BY",
+      "ARRANGE BY",
+      "GROUP BY"
+    ],
+    "answer": "ORDER BY",
+    "category": "DBMS"
+  },
+  {
+    "question": "What is cardinality in database?",
+    "options": [
+      "Number of columns",
+      "Number of unique values",
+      "Table size",
+      "Index count"
+    ],
+    "answer": "Number of unique values",
+    "category": "DBMS"
+  },
+  {
+    "question": "Which command creates a new database?",
+    "options": [
+      "NEW DATABASE",
+      "CREATE DATABASE",
+      "MAKE DATABASE",
+      "ADD DATABASE"
+    ],
+    "answer": "CREATE DATABASE",
+    "category": "DBMS"
+  },
+  {
+    "question": "What is referential integrity?",
+    "options": [
+      "Data accuracy",
+      "Foreign key relationships maintained",
+      "Primary key uniqueness",
+      "Data encryption"
+    ],
+    "answer": "Foreign key relationships maintained",
+    "category": "DBMS"
+  },
+  {
+    "question": "Which aggregate function finds the maximum value?",
+    "options": [
+      "MAX()",
+      "MAXIMUM()",
+      "TOP()",
+      "HIGHEST()"
+    ],
+    "answer": "MAX()",
+    "category": "DBMS"
+  },
+  {
+    "question": "What is a schema in database?",
+    "options": [
+      "Query plan",
+      "Database structure definition",
+      "Backup file",
+      "User permissions"
+    ],
+    "answer": "Database structure definition",
+    "category": "DBMS"
+  },
+  {
+    "question": "Which operator is used for pattern matching in SQL?",
+    "options": [
+      "MATCH",
+      "LIKE",
+      "PATTERN",
+      "REGEX"
+    ],
+    "answer": "LIKE",
+    "category": "DBMS"
+  },
+  {
+    "question": "What does OS stand for?",
+    "options": [
+      "Operating Software",
+      "Open System",
+      "Operating System",
+      "Optical Storage"
+    ],
+    "answer": "Operating System",
+    "category": "OS"
+  },
+  {
+    "question": "Which scheduling algorithm gives the shortest job highest priority?",
+    "options": [
+      "FCFS",
+      "SJF",
+      "Round Robin",
+      "Priority Scheduling"
+    ],
+    "answer": "SJF",
+    "category": "OS"
+  },
+  {
+    "question": "What is a process?",
+    "options": [
+      "Program on disk",
+      "Program in execution",
+      "CPU instruction",
+      "Memory location"
+    ],
+    "answer": "Program in execution",
+    "category": "OS"
+  },
+  {
+    "question": "Which memory management technique divides memory into fixed-size partitions?",
+    "options": [
+      "Paging",
+      "Segmentation",
+      "Dynamic partitioning",
+      "Swapping"
+    ],
+    "answer": "Paging",
+    "category": "OS"
+  },
+  {
+    "question": "What is a semaphore?",
+    "options": [
+      "Memory location",
+      "Synchronization tool",
+      "Scheduling algorithm",
+      "File system"
+    ],
+    "answer": "Synchronization tool",
+    "category": "OS"
+  },
+  {
+    "question": "Which condition is necessary for deadlock?",
+    "options": [
+      "Mutual exclusion",
+      "Single processor",
+      "Virtual memory",
+      "Time sharing"
+    ],
+    "answer": "Mutual exclusion",
+    "category": "OS"
+  },
+  {
+    "question": "What is thrashing?",
+    "options": [
+      "CPU overheating",
+      "Excessive paging activity",
+      "Memory overflow",
+      "Process termination"
+    ],
+    "answer": "Excessive paging activity",
+    "category": "OS"
+  },
+  {
+    "question": "Which part of OS directly interacts with hardware?",
+    "options": [
+      "Shell",
+      "Kernel",
+      "GUI",
+      "Compiler"
+    ],
+    "answer": "Kernel",
+    "category": "OS"
+  },
+  {
+    "question": "What is context switching?",
+    "options": [
+      "Switching users",
+      "Switching between processes",
+      "Switching memory",
+      "Switching files"
+    ],
+    "answer": "Switching between processes",
+    "category": "OS"
+  },
+  {
+    "question": "Which page replacement algorithm is optimal but not implementable?",
+    "options": [
+      "FIFO",
+      "LRU",
+      "Optimal",
+      "LFU"
+    ],
+    "answer": "Optimal",
+    "category": "OS"
+  },
+  {
+    "question": "What is virtual memory?",
+    "options": [
+      "RAM only",
+      "Simulated memory using disk",
+      "Cache memory",
+      "ROM"
+    ],
+    "answer": "Simulated memory using disk",
+    "category": "OS"
+  },
+  {
+    "question": "Which system call creates a new process?",
+    "options": [
+      "create()",
+      "fork()",
+      "new()",
+      "spawn()"
+    ],
+    "answer": "fork()",
+    "category": "OS"
+  },
+  {
+    "question": "What is a race condition?",
+    "options": [
+      "Fast execution",
+      "Multiple processes accessing shared data",
+      "CPU scheduling",
+      "Memory leak"
+    ],
+    "answer": "Multiple processes accessing shared data",
+    "category": "OS"
+  },
+  {
+    "question": "Which scheduling is non-preemptive?",
+    "options": [
+      "Round Robin",
+      "FCFS",
+      "Priority with preemption",
+      "SRT"
+    ],
+    "answer": "FCFS",
+    "category": "OS"
+  },
+  {
+    "question": "What is spooling?",
+    "options": [
+      "Memory allocation",
+      "Simultaneous peripheral operations online",
+      "Process scheduling",
+      "Disk formatting"
+    ],
+    "answer": "Simultaneous peripheral operations online",
+    "category": "OS"
+  },
+  {
+    "question": "Which memory is fastest?",
+    "options": [
+      "RAM",
+      "Cache",
+      "Hard Disk",
+      "Register"
+    ],
+    "answer": "Register",
+    "category": "OS"
+  },
+  {
+    "question": "What is a zombie process?",
+    "options": [
+      "Dead process",
+      "Process completed but entry remains",
+      "Suspended process",
+      "Background process"
+    ],
+    "answer": "Process completed but entry remains",
+    "category": "OS"
+  },
+  {
+    "question": "Which file system structure uses linked allocation?",
+    "options": [
+      "FAT",
+      "NTFS",
+      "ext4",
+      "HFS"
+    ],
+    "answer": "FAT",
+    "category": "OS"
+  },
+  {
+    "question": "What is the purpose of TLB?",
+    "options": [
+      "Store programs",
+      "Cache page table entries",
+      "Schedule processes",
+      "Manage files"
+    ],
+    "answer": "Cache page table entries",
+    "category": "OS"
+  },
+  {
+    "question": "Which IPC mechanism uses shared memory?",
+    "options": [
+      "Pipes",
+      "Message passing",
+      "Shared memory",
+      "Sockets"
+    ],
+    "answer": "Shared memory",
+    "category": "OS"
+  },
+  {
+    "question": "What is fragmentation?",
+    "options": [
+      "File corruption",
+      "Wasted memory space",
+      "Disk failure",
+      "Process termination"
+    ],
+    "answer": "Wasted memory space",
+    "category": "OS"
+  },
+  {
+    "question": "Which command shows running processes in Linux?",
+    "options": [
+      "ls",
+      "ps",
+      "top",
+      "proc"
+    ],
+    "answer": "ps",
+    "category": "OS"
+  },
+  {
+    "question": "What is a critical section?",
+    "options": [
+      "Important code",
+      "Code accessing shared resources",
+      "Error handling code",
+      "Kernel code"
+    ],
+    "answer": "Code accessing shared resources",
+    "category": "OS"
+  },
+  {
+    "question": "Which scheduling algorithm uses time quantum?",
+    "options": [
+      "FCFS",
+      "SJF",
+      "Round Robin",
+      "Priority"
+    ],
+    "answer": "Round Robin",
+    "category": "OS"
+  },
+  {
+    "question": "What is demand paging?",
+    "options": [
+      "Loading entire program",
+      "Loading pages on demand",
+      "Preloading pages",
+      "Fixed paging"
+    ],
+    "answer": "Loading pages on demand",
+    "category": "OS"
+  },
+  {
+    "question": "Which state is a process in when waiting for I/O?",
+    "options": [
+      "Running",
+      "Ready",
+      "Blocked",
+      "Terminated"
+    ],
+    "answer": "Blocked",
+    "category": "OS"
+  },
+  {
+    "question": "What is the Banker's algorithm used for?",
+    "options": [
+      "Scheduling",
+      "Deadlock avoidance",
+      "Memory management",
+      "File allocation"
+    ],
+    "answer": "Deadlock avoidance",
+    "category": "OS"
+  },
+  {
+    "question": "Which directory structure is used in UNIX?",
+    "options": [
+      "Flat",
+      "Tree",
+      "Graph",
+      "Network"
+    ],
+    "answer": "Tree",
+    "category": "OS"
+  },
+  {
+    "question": "What is swapping?",
+    "options": [
+      "Switching processes",
+      "Moving processes between memory and disk",
+      "Exchanging data",
+      "Changing priority"
+    ],
+    "answer": "Moving processes between memory and disk",
+    "category": "OS"
+  },
+  {
+    "question": "Which mechanism prevents race conditions?",
+    "options": [
+      "Scheduling",
+      "Synchronization",
+      "Paging",
+      "Caching"
+    ],
+    "answer": "Synchronization",
+    "category": "OS"
+  },
+  {
+    "question": "What does OOP stand for?",
+    "options": [
+      "Object Oriented Programming",
+      "Objective Oriented Process",
+      "Open Object Protocol",
+      "Operating Object Platform"
+    ],
+    "answer": "Object Oriented Programming",
+    "category": "OOPS"
+  },
+  {
+    "question": "Which OOP concept hides implementation details?",
+    "options": [
+      "Inheritance",
+      "Polymorphism",
+      "Encapsulation",
+      "Abstraction"
+    ],
+    "answer": "Encapsulation",
+    "category": "OOPS"
+  },
+  {
+    "question": "What is inheritance?",
+    "options": [
+      "Creating objects",
+      "Acquiring properties from parent class",
+      "Hiding data",
+      "Method overloading"
+    ],
+    "answer": "Acquiring properties from parent class",
+    "category": "OOPS"
+  },
+  {
+    "question": "Which concept allows one interface, multiple implementations?",
+    "options": [
+      "Encapsulation",
+      "Abstraction",
+      "Polymorphism",
+      "Inheritance"
+    ],
+    "answer": "Polymorphism",
+    "category": "OOPS"
+  },
+  {
+    "question": "What is method overloading?",
+    "options": [
+      "Same method, different classes",
+      "Same name, different parameters",
+      "Same signature, different return",
+      "Multiple inheritance"
+    ],
+    "answer": "Same name, different parameters",
+    "category": "OOPS"
+  },
+  {
+    "question": "Which keyword is used to inherit a class in Python?",
+    "options": [
+      "extends",
+      "inherits",
+      "class ChildClass(ParentClass)",
+      "inherit"
+    ],
+    "answer": "class ChildClass(ParentClass)",
+    "category": "OOPS"
+  },
+  {
+    "question": "What is an abstract class?",
+    "options": [
+      "Class without methods",
+      "Class that cannot be instantiated",
+      "Final class",
+      "Static class"
+    ],
+    "answer": "Class that cannot be instantiated",
+    "category": "OOPS"
+  },
+  {
+    "question": "Which relationship is represented by 'has-a'?",
+    "options": [
+      "Inheritance",
+      "Composition",
+      "Polymorphism",
+      "Abstraction"
+    ],
+    "answer": "Composition",
+    "category": "OOPS"
+  },
+  {
+    "question": "What is method overriding?",
+    "options": [
+      "Multiple methods same name",
+      "Child redefines parent method",
+      "Static methods",
+      "Constructor overloading"
+    ],
+    "answer": "Child redefines parent method",
+    "category": "OOPS"
+  },
+  {
+    "question": "Which access modifier allows access only within same package?",
+    "options": [
+      "public",
+      "private",
+      "protected",
+      "default"
+    ],
+    "answer": "default",
+    "category": "OOPS"
+  },
+  {
+    "question": "What is a constructor?",
+    "options": [
+      "Destructor",
+      "Special method to initialize objects",
+      "Static method",
+      "Abstract method"
+    ],
+    "answer": "Special method to initialize objects",
+    "category": "OOPS"
+  },
+  {
+    "question": "Which type of polymorphism occurs at compile time?",
+    "options": [
+      "Runtime",
+      "Static",
+      "Dynamic",
+      "Late binding"
+    ],
+    "answer": "Static",
+    "category": "OOPS"
+  },
+  {
+    "question": "What is an interface?",
+    "options": [
+      "Abstract class",
+      "Contract with abstract methods",
+      "Concrete class",
+      "Final class"
+    ],
+    "answer": "Contract with abstract methods",
+    "category": "OOPS"
+  },
+  {
+    "question": "Which principle suggests classes should be open for extension but closed for modification?",
+    "options": [
+      "Single Responsibility",
+      "Open/Closed",
+      "Liskov Substitution",
+      "Interface Segregation"
+    ],
+    "answer": "Open/Closed",
+    "category": "OOPS"
+  },
+  {
+    "question": "What is a destructor?",
+    "options": [
+      "Creates object",
+      "Destroys object and frees memory",
+      "Copies object",
+      "Compares objects"
+    ],
+    "answer": "Destroys object and frees memory",
+    "category": "OOPS"
+  },
+  {
+    "question": "Which keyword prevents inheritance in Java?",
+    "options": [
+      "static",
+      "final",
+      "abstract",
+      "sealed"
+    ],
+    "answer": "final",
+    "category": "OOPS"
+  },
+  {
+    "question": "What is aggregation?",
+    "options": [
+      "Strong association",
+      "Weak association",
+      "Inheritance",
+      "Polymorphism"
+    ],
+    "answer": "Weak association",
+    "category": "OOPS"
+  },
+  {
+    "question": "Which concept focuses on 'what' rather than 'how'?",
+    "options": [
+      "Encapsulation",
+      "Abstraction",
+      "Inheritance",
+      "Polymorphism"
+    ],
+    "answer": "Abstraction",
+    "category": "OOPS"
+  },
+  {
+    "question": "What is multiple inheritance?",
+    "options": [
+      "One parent, multiple children",
+      "Multiple parents, one child",
+      "Multiple methods",
+      "Multiple constructors"
+    ],
+    "answer": "Multiple parents, one child",
+    "category": "OOPS"
+  },
+  {
+    "question": "Which method is called automatically when object is created?",
+    "options": [
+      "Destructor",
+      "Constructor",
+      "Finalizer",
+      "Initializer"
+    ],
+    "answer": "Constructor",
+    "category": "OOPS"
+  },
+  {
+    "question": "What is the diamond problem?",
+    "options": [
+      "Single inheritance issue",
+      "Multiple inheritance ambiguity",
+      "Encapsulation problem",
+      "Polymorphism error"
+    ],
+    "answer": "Multiple inheritance ambiguity",
+    "category": "OOPS"
+  },
+  {
+    "question": "Which keyword is used for runtime polymorphism?",
+    "options": [
+      "static",
+      "final",
+      "virtual",
+      "abstract"
+    ],
+    "answer": "virtual",
+    "category": "OOPS"
+  },
+  {
+    "question": "What is operator overloading?",
+    "options": [
+      "Multiple operators",
+      "Redefining operator behavior",
+      "Operator precedence",
+      "Operator chaining"
+    ],
+    "answer": "Redefining operator behavior",
+    "category": "OOPS"
+  },
+  {
+    "question": "Which principle states derived classes should be substitutable for base class?",
+    "options": [
+      "Single Responsibility",
+      "Open/Closed",
+      "Liskov Substitution",
+      "Dependency Inversion"
+    ],
+    "answer": "Liskov Substitution",
+    "category": "OOPS"
+  },
+  {
+    "question": "What is a static method?",
+    "options": [
+      "Instance method",
+      "Class method",
+      "Abstract method",
+      "Final method"
+    ],
+    "answer": "Class method",
+    "category": "OOPS"
+  },
+  {
+    "question": "Which binding occurs at compile time?",
+    "options": [
+      "Dynamic",
+      "Late",
+      "Early",
+      "Runtime"
+    ],
+    "answer": "Early",
+    "category": "OOPS"
+  },
+  {
+    "question": "What is the purpose of super keyword?",
+    "options": [
+      "Create object",
+      "Access parent class members",
+      "Define interface",
+      "Declare abstract"
+    ],
+    "answer": "Access parent class members",
+    "category": "OOPS"
+  },
+  {
+    "question": "Which concept bundles data and methods together?",
+    "options": [
+      "Class",
+      "Object",
+      "Encapsulation",
+      "Module"
+    ],
+    "answer": "Encapsulation",
+    "category": "OOPS"
+  },
+  {
+    "question": "What is a pure virtual function?",
+    "options": [
+      "Function with implementation",
+      "Function without implementation",
+      "Static function",
+      "Friend function"
+    ],
+    "answer": "Function without implementation",
+    "category": "OOPS"
+  },
+  {
+    "question": "Which access specifier allows derived class access?",
+    "options": [
+      "public",
+      "private",
+      "protected",
+      "internal"
+    ],
+    "answer": "protected",
+    "category": "OOPS"
+  },
+  {
+    "question": "What does TCP stand for?",
+    "options": [
+      "Transfer Control Protocol",
+      "Transmission Control Protocol",
+      "Transport Communication Protocol",
+      "Technical Control Process"
+    ],
+    "answer": "Transmission Control Protocol",
+    "category": "Networks"
+  },
+  {
+    "question": "Which layer of OSI model handles routing?",
+    "options": [
+      "Physical",
+      "Data Link",
+      "Network",
+      "Transport"
+    ],
+    "answer": "Network",
+    "category": "Networks"
+  },
+  {
+    "question": "What is the default port for HTTP?",
+    "options": [
+      "21",
+      "22",
+      "80",
+      "443"
+    ],
+    "answer": "80",
+    "category": "Networks"
+  },
+  {
+    "question": "Which protocol is connectionless?",
+    "options": [
+      "TCP",
+      "UDP",
+      "FTP",
+      "SMTP"
+    ],
+    "answer": "UDP",
+    "category": "Networks"
+  },
+  {
+    "question": "What is an IP address?",
+    "options": [
+      "Physical address",
+      "Logical address",
+      "MAC address",
+      "Port number"
+    ],
+    "answer": "Logical address",
+    "category": "Networks"
+  },
+  {
+    "question": "Which device operates at the Network layer?",
+    "options": [
+      "Hub",
+      "Switch",
+      "Router",
+      "Repeater"
+    ],
+    "answer": "Router",
+    "category": "Networks"
+  },
+  {
+    "question": "What is the maximum size of IPv4 address?",
+    "options": [
+      "16 bits",
+      "32 bits",
+      "64 bits",
+      "128 bits"
+    ],
+    "answer": "32 bits",
+    "category": "Networks"
+  },
+  {
+    "question": "Which protocol translates domain names to IP addresses?",
+    "options": [
+      "DHCP",
+      "DNS",
+      "ARP",
+      "RARP"
+    ],
+    "answer": "DNS",
+    "category": "Networks"
+  },
+  {
+    "question": "What is a subnet mask?",
+    "options": [
+      "MAC address",
+      "Divides IP into network and host",
+      "Port number",
+      "Protocol type"
+    ],
+    "answer": "Divides IP into network and host",
+    "category": "Networks"
+  },
+  {
+    "question": "Which layer ensures error-free transmission?",
+    "options": [
+      "Physical",
+      "Data Link",
+      "Network",
+      "Session"
+    ],
+    "answer": "Data Link",
+    "category": "Networks"
+  },
+  {
+    "question": "What is the purpose of ARP?",
+    "options": [
+      "IP to MAC resolution",
+      "Domain to IP",
+      "MAC to IP",
+      "Port to IP"
+    ],
+    "answer": "IP to MAC resolution",
+    "category": "Networks"
+  },
+  {
+    "question": "Which topology has a central hub?",
+    "options": [
+      "Bus",
+      "Ring",
+      "Star",
+      "Mesh"
+    ],
+    "answer": "Star",
+    "category": "Networks"
+  },
+  {
+    "question": "What is the default port for HTTPS?",
+    "options": [
+      "80",
+      "443",
+      "8080",
+      "22"
+    ],
+    "answer": "443",
+    "category": "Networks"
+  },
+  {
+    "question": "Which protocol is used for email transmission?",
+    "options": [
+      "HTTP",
+      "FTP",
+      "SMTP",
+      "POP3"
+    ],
+    "answer": "SMTP",
+    "category": "Networks"
+  },
+  {
+    "question": "What is a MAC address?",
+    "options": [
+      "Logical address",
+      "Physical address",
+      "IP address",
+      "Port address"
+    ],
+    "answer": "Physical address",
+    "category": "Networks"
+  },
+  {
+    "question": "Which class of IP address has range 192.0.0.0 to 223.255.255.255?",
+    "options": [
+      "Class A",
+      "Class B",
+      "Class C",
+      "Class D"
+    ],
+    "answer": "Class C",
+    "category": "Networks"
+  },
+  {
+    "question": "What is NAT?",
+    "options": [
+      "Name Address Translation",
+      "Network Address Translation",
+      "Node Access Technology",
+      "Network Allocation Table"
+    ],
+    "answer": "Network Address Translation",
+    "category": "Networks"
+  },
+  {
+    "question": "Which protocol provides reliable data transfer?",
+    "options": [
+      "IP",
+      "UDP",
+      "TCP",
+      "ICMP"
+    ],
+    "answer": "TCP",
+    "category": "Networks"
+  },
+  {
+    "question": "What is a firewall?",
+    "options": [
+      "Antivirus",
+      "Network security system",
+      "Router",
+      "Switch"
+    ],
+    "answer": "Network security system",
+    "category": "Networks"
+  },
+  {
+    "question": "Which protocol is used for file transfer?",
+    "options": [
+      "HTTP",
+      "FTP",
+      "SMTP",
+      "DNS"
+    ],
+    "answer": "FTP",
+    "category": "Networks"
+  },
+  {
+    "question": "What is the purpose of ping command?",
+    "options": [
+      "Test connectivity",
+      "Transfer files",
+      "Send email",
+      "Browse web"
+    ],
+    "answer": "Test connectivity",
+    "category": "Networks"
+  },
+  {
+    "question": "Which layer handles data encryption?",
+    "options": [
+      "Application",
+      "Presentation",
+      "Session",
+      "Transport"
+    ],
+    "answer": "Presentation",
+    "category": "Networks"
+  },
+  {
+    "question": "What is bandwidth?",
+    "options": [
+      "Network speed",
+      "Data transmission capacity",
+      "Signal strength",
+      "Connection type"
+    ],
+    "answer": "Data transmission capacity",
+    "category": "Networks"
+  },
+  {
+    "question": "Which protocol assigns IP addresses dynamically?",
+    "options": [
+      "DNS",
+      "DHCP",
+      "ARP",
+      "ICMP"
+    ],
+    "answer": "DHCP",
+    "category": "Networks"
+  },
+  {
+    "question": "What is a gateway?",
+    "options": [
+      "Switch",
+      "Router connecting different networks",
+      "Hub",
+      "Modem"
+    ],
+    "answer": "Router connecting different networks",
+    "category": "Networks"
+  },
+  {
+    "question": "Which device operates at Data Link layer?",
+    "options": [
+      "Router",
+      "Switch",
+      "Gateway",
+      "Modem"
+    ],
+    "answer": "Switch",
+    "category": "Networks"
+  },
+  {
+    "question": "What is latency?",
+    "options": [
+      "Bandwidth",
+      "Delay in data transmission",
+      "Signal strength",
+      "Connection speed"
+    ],
+    "answer": "Delay in data transmission",
+    "category": "Networks"
+  },
+  {
+    "question": "Which protocol is used for remote login?",
+    "options": [
+      "FTP",
+      "TELNET",
+      "HTTP",
+      "SMTP"
+    ],
+    "answer": "TELNET",
+    "category": "Networks"
+  },
+  {
+    "question": "What is a proxy server?",
+    "options": [
+      "Web server",
+      "Intermediary server",
+      "Mail server",
+      "DNS server"
+    ],
+    "answer": "Intermediary server",
+    "category": "Networks"
+  },
+  {
+    "question": "Which layer is responsible for flow control?",
+    "options": [
+      "Network",
+      "Transport",
+      "Data Link",
+      "Physical"
+    ],
+    "answer": "Transport",
+    "category": "Networks"
+  },
+  {
+    "question": "What is a data structure?",
+    "options": [
+      "Algorithm",
+      "Way to organize data",
+      "Programming language",
+      "Database"
+    ],
+    "answer": "Way to organize data",
+    "category": "DataStructures"
+  },
+  {
+    "question": "Which data structure uses LIFO?",
+    "options": [
+      "Queue",
+      "Stack",
+      "Array",
+      "Tree"
+    ],
+    "answer": "Stack",
+    "category": "DataStructures"
+  },
+  {
+    "question": "What is the time complexity of accessing an array element by index?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "answer": "O(1)",
+    "category": "DataStructures"
+  },
+  {
+    "question": "Which data structure uses FIFO?",
     "options": [
       "Stack",
       "Queue",
       "Tree",
       "Graph"
     ],
-    "answer": "Queue"
+    "answer": "Queue",
+    "category": "DataStructures"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q2)",
+    "question": "What is a linked list?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "Array of pointers",
+      "Sequence of nodes with pointers",
+      "Tree structure",
+      "Hash table"
     ],
-    "answer": "6"
+    "answer": "Sequence of nodes with pointers",
+    "category": "DataStructures"
   },
   {
-    "question": "What will Python print?\nprint(2**3**2) (Q3)",
+    "question": "Which operation is not efficient in array?",
     "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
+      "Access",
+      "Search",
+      "Insertion at beginning",
+      "Random access"
     ],
-    "answer": "512"
+    "answer": "Insertion at beginning",
+    "category": "DataStructures"
   },
   {
-    "question": "Which traversal of BST gives sorted order? (Q4)",
+    "question": "What is a binary tree?",
     "options": [
+      "Tree with 2 nodes",
+      "Tree with max 2 children per node",
+      "Tree with 2 levels",
+      "Tree with 2 roots"
+    ],
+    "answer": "Tree with max 2 children per node",
+    "category": "DataStructures"
+  },
+  {
+    "question": "Which traversal visits root first in binary tree?",
+    "options": [
+      "Inorder",
       "Preorder",
       "Postorder",
-      "Inorder",
       "Level order"
     ],
-    "answer": "Inorder"
+    "answer": "Preorder",
+    "category": "DataStructures"
   },
   {
-    "question": "What will Python print?\nprint(bool([])) (Q5)",
+    "question": "What is a hash table?",
     "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
+      "Array",
+      "Key-value data structure",
+      "Tree",
+      "Graph"
     ],
-    "answer": "False"
+    "answer": "Key-value data structure",
+    "category": "DataStructures"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q6)",
+    "question": "Which data structure is used for BFS?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "Stack",
+      "Queue",
+      "Array",
+      "Tree"
     ],
-    "answer": "5"
+    "answer": "Queue",
+    "category": "DataStructures"
   },
   {
-    "question": "Which key uniquely identifies a record? (Q7)",
+    "question": "What is a heap?",
     "options": [
-      "Foreign Key",
-      "Primary Key",
-      "Candidate Key",
-      "Composite Key"
+      "Sorted array",
+      "Complete binary tree",
+      "Linked list",
+      "Hash table"
     ],
-    "answer": "Primary Key"
+    "answer": "Complete binary tree",
+    "category": "DataStructures"
   },
   {
-    "question": "What will Python print?\nprint(2**3**2) (Q8)",
+    "question": "Which structure allows insertion/deletion at both ends?",
     "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
+      "Stack",
+      "Queue",
+      "Deque",
+      "Array"
     ],
-    "answer": "512"
+    "answer": "Deque",
+    "category": "DataStructures"
   },
   {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q9)",
+    "question": "What is a circular linked list?",
     "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
+      "List with loop",
+      "Last node points to first",
+      "List with cycle",
+      "Doubly linked list"
     ],
-    "answer": "4"
+    "answer": "Last node points to first",
+    "category": "DataStructures"
   },
   {
-    "question": "Deadlock happens when? (Q10)",
-    "options": [
-      "CPU idle",
-      "Mutual waiting",
-      "Memory leak",
-      "Crash"
-    ],
-    "answer": "Mutual waiting"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q11)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q12)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What is the time complexity of binary search? (Q13)",
-    "options": [
-      "O(n)",
-      "O(log n)",
-      "O(n log n)",
-      "O(1)"
-    ],
-    "answer": "O(log n)"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q14)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q15)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "Which SQL command retrieves data? (Q16)",
-    "options": [
-      "INSERT",
-      "SELECT",
-      "DELETE",
-      "UPDATE"
-    ],
-    "answer": "SELECT"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q17)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q18)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "Which memory is volatile? (Q19)",
-    "options": [
-      "ROM",
-      "RAM",
-      "SSD",
-      "HDD"
-    ],
-    "answer": "RAM"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q20)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q21)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "Which data structure uses LIFO order? (Q22)",
+    "question": "Which structure is used for DFS?",
     "options": [
       "Queue",
       "Stack",
       "Heap",
-      "Graph"
+      "Array"
     ],
-    "answer": "Stack"
+    "answer": "Stack",
+    "category": "DataStructures"
   },
   {
-    "question": "What will Python print?\nprint(2**3**2) (Q23)",
+    "question": "What is the root node in a tree?",
     "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
+      "Last node",
+      "Top node",
+      "Middle node",
+      "Leaf node"
     ],
-    "answer": "512"
+    "answer": "Top node",
+    "category": "DataStructures"
   },
   {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q24)",
+    "question": "Which structure has average O(1) search time?",
     "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
+      "Array",
+      "Linked list",
+      "Hash table",
+      "Binary tree"
     ],
-    "answer": "4"
+    "answer": "Hash table",
+    "category": "DataStructures"
   },
   {
-    "question": "Which algorithm is used for shortest path? (Q25)",
+    "question": "What is a graph?",
     "options": [
-      "DFS",
-      "Prim",
-      "Dijkstra",
-      "Kruskal"
+      "Linear structure",
+      "Set of vertices and edges",
+      "Tree variant",
+      "Array of arrays"
     ],
-    "answer": "Dijkstra"
+    "answer": "Set of vertices and edges",
+    "category": "DataStructures"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q26)",
+    "question": "Which tree is always balanced?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "Binary tree",
+      "AVL tree",
+      "Complete tree",
+      "Full tree"
     ],
-    "answer": "5"
+    "answer": "AVL tree",
+    "category": "DataStructures"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q27)",
+    "question": "What is a leaf node?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "Root node",
+      "Node without children",
+      "Middle node",
+      "Parent node"
     ],
-    "answer": "6"
+    "answer": "Node without children",
+    "category": "DataStructures"
   },
   {
-    "question": "Which OOP concept hides data? (Q28)",
+    "question": "Which structure uses hashing?",
     "options": [
-      "Abstraction",
-      "Encapsulation",
-      "Inheritance",
-      "Polymorphism"
-    ],
-    "answer": "Encapsulation"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q29)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q30)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "Which data structure uses FIFO order? (Q31)",
-    "options": [
+      "Array",
+      "Hash table",
       "Stack",
+      "Queue"
+    ],
+    "answer": "Hash table",
+    "category": "DataStructures"
+  },
+  {
+    "question": "What is a priority queue?",
+    "options": [
+      "Normal queue",
+      "Queue with priority ordering",
+      "Stack",
+      "Deque"
+    ],
+    "answer": "Queue with priority ordering",
+    "category": "DataStructures"
+  },
+  {
+    "question": "Which traversal gives sorted order in BST?",
+    "options": [
+      "Preorder",
+      "Inorder",
+      "Postorder",
+      "Level order"
+    ],
+    "answer": "Inorder",
+    "category": "DataStructures"
+  },
+  {
+    "question": "What is a doubly linked list?",
+    "options": [
+      "Two lists",
+      "Nodes with two pointers",
+      "Two roots",
+      "Two heads"
+    ],
+    "answer": "Nodes with two pointers",
+    "category": "DataStructures"
+  },
+  {
+    "question": "Which structure is best for undo operations?",
+    "options": [
       "Queue",
+      "Stack",
+      "Array",
+      "Tree"
+    ],
+    "answer": "Stack",
+    "category": "DataStructures"
+  },
+  {
+    "question": "What is an adjacency matrix?",
+    "options": [
+      "Tree representation",
+      "Graph representation using matrix",
+      "Array of lists",
+      "Hash table"
+    ],
+    "answer": "Graph representation using matrix",
+    "category": "DataStructures"
+  },
+  {
+    "question": "Which structure has no random access?",
+    "options": [
+      "Array",
+      "Linked list",
+      "Hash table",
+      "Matrix"
+    ],
+    "answer": "Linked list",
+    "category": "DataStructures"
+  },
+  {
+    "question": "What is a trie?",
+    "options": [
+      "Binary tree",
+      "Tree for string storage",
+      "Graph",
+      "Hash table"
+    ],
+    "answer": "Tree for string storage",
+    "category": "DataStructures"
+  },
+  {
+    "question": "Which structure is used in expression evaluation?",
+    "options": [
+      "Queue",
+      "Stack",
       "Tree",
       "Graph"
     ],
-    "answer": "Queue"
+    "answer": "Stack",
+    "category": "DataStructures"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q32)",
+    "question": "What is a sparse matrix?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "Full matrix",
+      "Matrix with mostly zeros",
+      "Small matrix",
+      "Dense matrix"
     ],
-    "answer": "6"
+    "answer": "Matrix with mostly zeros",
+    "category": "DataStructures"
   },
   {
-    "question": "What will Python print?\nprint(2**3**2) (Q33)",
+    "question": "Which structure allows fastest insertion?",
     "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
+      "Sorted array",
+      "Linked list at head",
+      "Binary search tree",
+      "Heap"
     ],
-    "answer": "512"
+    "answer": "Linked list at head",
+    "category": "DataStructures"
   },
   {
-    "question": "Which traversal of BST gives sorted order? (Q34)",
+    "question": "What does O(1) represent?",
     "options": [
-      "Preorder",
-      "Postorder",
-      "Inorder",
-      "Level order"
+      "Linear time",
+      "Constant time",
+      "Logarithmic time",
+      "Quadratic time"
     ],
-    "answer": "Inorder"
+    "answer": "Constant time",
+    "category": "TimeComplexity"
   },
   {
-    "question": "What will Python print?\nprint(bool([])) (Q35)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q36)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "Which key uniquely identifies a record? (Q37)",
-    "options": [
-      "Foreign Key",
-      "Primary Key",
-      "Candidate Key",
-      "Composite Key"
-    ],
-    "answer": "Primary Key"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q38)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q39)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "Deadlock happens when? (Q40)",
-    "options": [
-      "CPU idle",
-      "Mutual waiting",
-      "Memory leak",
-      "Crash"
-    ],
-    "answer": "Mutual waiting"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q41)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q42)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What is the time complexity of binary search? (Q43)",
+    "question": "What is the time complexity of binary search?",
     "options": [
       "O(n)",
       "O(log n)",
-      "O(n log n)",
+      "O(n²)",
       "O(1)"
     ],
-    "answer": "O(log n)"
+    "answer": "O(log n)",
+    "category": "TimeComplexity"
   },
   {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q44)",
+    "question": "What is the worst-case time complexity of bubble sort?",
     "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
+      "O(n)",
+      "O(n log n)",
+      "O(n²)",
+      "O(log n)"
     ],
-    "answer": "4"
+    "answer": "O(n²)",
+    "category": "TimeComplexity"
   },
   {
-    "question": "What will Python print?\nprint(bool([])) (Q45)",
+    "question": "Which notation represents upper bound?",
     "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
+      "Big O",
+      "Big Omega",
+      "Big Theta",
+      "Small o"
     ],
-    "answer": "False"
+    "answer": "Big O",
+    "category": "TimeComplexity"
   },
   {
-    "question": "Which SQL command retrieves data? (Q46)",
+    "question": "What is the time complexity of accessing array element?",
     "options": [
-      "INSERT",
-      "SELECT",
-      "DELETE",
-      "UPDATE"
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
     ],
-    "answer": "SELECT"
+    "answer": "O(1)",
+    "category": "TimeComplexity"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q47)",
+    "question": "What is the time complexity of linear search?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n log n)"
     ],
-    "answer": "6"
+    "answer": "O(n)",
+    "category": "TimeComplexity"
   },
   {
-    "question": "What will Python print?\nprint(2**3**2) (Q48)",
+    "question": "Which sorting algorithm has O(n log n) average case?",
     "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
+      "Bubble sort",
+      "Insertion sort",
+      "Merge sort",
+      "Selection sort"
     ],
-    "answer": "512"
+    "answer": "Merge sort",
+    "category": "TimeComplexity"
   },
   {
-    "question": "Which memory is volatile? (Q49)",
+    "question": "What is space complexity?",
     "options": [
-      "ROM",
-      "RAM",
-      "SSD",
-      "HDD"
+      "Time taken",
+      "Memory used",
+      "Code lines",
+      "Variables count"
     ],
-    "answer": "RAM"
+    "answer": "Memory used",
+    "category": "TimeComplexity"
   },
   {
-    "question": "What will Python print?\nprint(bool([])) (Q50)",
+    "question": "What is the time complexity of inserting in hash table (average)?",
     "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
     ],
-    "answer": "False"
+    "answer": "O(1)",
+    "category": "TimeComplexity"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q51)",
+    "question": "Which notation represents lower bound?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "Big O",
+      "Big Omega",
+      "Big Theta",
+      "Small omega"
     ],
-    "answer": "5"
+    "answer": "Big Omega",
+    "category": "TimeComplexity"
   },
   {
-    "question": "Which data structure uses LIFO order? (Q52)",
+    "question": "What is the time complexity of traversing a linked list?",
     "options": [
-      "Queue",
-      "Stack",
-      "Heap",
-      "Graph"
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
     ],
-    "answer": "Stack"
+    "answer": "O(n)",
+    "category": "TimeComplexity"
   },
   {
-    "question": "What will Python print?\nprint(2**3**2) (Q53)",
+    "question": "What is the best case time complexity of quick sort?",
     "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
+      "O(n)",
+      "O(n log n)",
+      "O(n²)",
+      "O(log n)"
     ],
-    "answer": "512"
+    "answer": "O(n log n)",
+    "category": "TimeComplexity"
   },
   {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q54)",
+    "question": "What is the time complexity of heap insertion?",
     "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
     ],
-    "answer": "4"
+    "answer": "O(log n)",
+    "category": "TimeComplexity"
   },
   {
-    "question": "Which algorithm is used for shortest path? (Q55)",
+    "question": "Which algorithm has constant space complexity?",
     "options": [
+      "Merge sort",
+      "Quick sort",
+      "Bubble sort",
+      "Tree traversal"
+    ],
+    "answer": "Bubble sort",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "What is the time complexity of DFS?",
+    "options": [
+      "O(V)",
+      "O(E)",
+      "O(V+E)",
+      "O(VE)"
+    ],
+    "answer": "O(V+E)",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "What does O(n²) represent?",
+    "options": [
+      "Linear",
+      "Quadratic",
+      "Logarithmic",
+      "Exponential"
+    ],
+    "answer": "Quadratic",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "What is the time complexity of matrix multiplication?",
+    "options": [
+      "O(n)",
+      "O(n²)",
+      "O(n³)",
+      "O(n log n)"
+    ],
+    "answer": "O(n³)",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "Which notation represents tight bound?",
+    "options": [
+      "Big O",
+      "Big Omega",
+      "Big Theta",
+      "Little o"
+    ],
+    "answer": "Big Theta",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "What is the time complexity of finding max in unsorted array?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "answer": "O(n)",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "What is the time complexity of BFS?",
+    "options": [
+      "O(V)",
+      "O(E)",
+      "O(V+E)",
+      "O(V²)"
+    ],
+    "answer": "O(V+E)",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "What is the average case time complexity of searching in BST?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "answer": "O(log n)",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "What is the time complexity of counting sort?",
+    "options": [
+      "O(n)",
+      "O(n+k)",
+      "O(n log n)",
+      "O(n²)"
+    ],
+    "answer": "O(n+k)",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "What is amortized time complexity?",
+    "options": [
+      "Worst case",
+      "Average over sequence",
+      "Best case",
+      "Space complexity"
+    ],
+    "answer": "Average over sequence",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "What is the time complexity of deleting from heap?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "answer": "O(log n)",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "What is the time complexity of recursive Fibonacci?",
+    "options": [
+      "O(n)",
+      "O(2^n)",
+      "O(n²)",
+      "O(log n)"
+    ],
+    "answer": "O(2^n)",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "What is the space complexity of recursion?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
+    ],
+    "answer": "O(n)",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "What is the time complexity of insertion sort (best case)?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(n log n)",
+      "O(n²)"
+    ],
+    "answer": "O(n)",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "What does O(2^n) represent?",
+    "options": [
+      "Linear",
+      "Quadratic",
+      "Exponential",
+      "Logarithmic"
+    ],
+    "answer": "Exponential",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "What is the time complexity of finding element in sorted array?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "answer": "O(log n)",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "What is the time complexity of topological sort?",
+    "options": [
+      "O(V)",
+      "O(E)",
+      "O(V+E)",
+      "O(V²)"
+    ],
+    "answer": "O(V+E)",
+    "category": "TimeComplexity"
+  },
+  {
+    "question": "What is a sorting algorithm?",
+    "options": [
+      "Searching method",
+      "Arranging data in order",
+      "Data structure",
+      "Graph traversal"
+    ],
+    "answer": "Arranging data in order",
+    "category": "Algorithms"
+  },
+  {
+    "question": "Which algorithm uses divide and conquer?",
+    "options": [
+      "Bubble sort",
+      "Merge sort",
+      "Insertion sort",
+      "Selection sort"
+    ],
+    "answer": "Merge sort",
+    "category": "Algorithms"
+  },
+  {
+    "question": "What is the principle of dynamic programming?",
+    "options": [
+      "Divide and conquer",
+      "Store and reuse subproblem solutions",
+      "Greedy choice",
+      "Backtracking"
+    ],
+    "answer": "Store and reuse subproblem solutions",
+    "category": "Algorithms"
+  },
+  {
+    "question": "Which algorithm finds shortest path in weighted graph?",
+    "options": [
+      "BFS",
       "DFS",
-      "Prim",
       "Dijkstra",
       "Kruskal"
     ],
-    "answer": "Dijkstra"
+    "answer": "Dijkstra",
+    "category": "Algorithms"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q56)",
+    "question": "What is a greedy algorithm?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "Optimal solution",
+      "Makes locally optimal choice",
+      "Exhaustive search",
+      "Divide and conquer"
     ],
-    "answer": "5"
+    "answer": "Makes locally optimal choice",
+    "category": "Algorithms"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q57)",
+    "question": "Which algorithm is used for finding MST?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "Which OOP concept hides data? (Q58)",
-    "options": [
-      "Abstraction",
-      "Encapsulation",
-      "Inheritance",
-      "Polymorphism"
-    ],
-    "answer": "Encapsulation"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q59)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q60)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "Which data structure uses FIFO order? (Q61)",
-    "options": [
-      "Stack",
-      "Queue",
-      "Tree",
-      "Graph"
-    ],
-    "answer": "Queue"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q62)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q63)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "Which traversal of BST gives sorted order? (Q64)",
-    "options": [
-      "Preorder",
-      "Postorder",
-      "Inorder",
-      "Level order"
-    ],
-    "answer": "Inorder"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q65)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q66)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "Which key uniquely identifies a record? (Q67)",
-    "options": [
-      "Foreign Key",
-      "Primary Key",
-      "Candidate Key",
-      "Composite Key"
-    ],
-    "answer": "Primary Key"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q68)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q69)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "Deadlock happens when? (Q70)",
-    "options": [
-      "CPU idle",
-      "Mutual waiting",
-      "Memory leak",
-      "Crash"
-    ],
-    "answer": "Mutual waiting"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q71)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q72)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What is the time complexity of binary search? (Q73)",
-    "options": [
-      "O(n)",
-      "O(log n)",
-      "O(n log n)",
-      "O(1)"
-    ],
-    "answer": "O(log n)"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q74)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q75)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "Which SQL command retrieves data? (Q76)",
-    "options": [
-      "INSERT",
-      "SELECT",
-      "DELETE",
-      "UPDATE"
-    ],
-    "answer": "SELECT"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q77)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q78)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "Which memory is volatile? (Q79)",
-    "options": [
-      "ROM",
-      "RAM",
-      "SSD",
-      "HDD"
-    ],
-    "answer": "RAM"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q80)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q81)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "Which data structure uses LIFO order? (Q82)",
-    "options": [
-      "Queue",
-      "Stack",
-      "Heap",
-      "Graph"
-    ],
-    "answer": "Stack"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q83)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q84)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "Which algorithm is used for shortest path? (Q85)",
-    "options": [
-      "DFS",
-      "Prim",
       "Dijkstra",
+      "Kruskal",
+      "Bellman-Ford",
+      "Floyd-Warshall"
+    ],
+    "answer": "Kruskal",
+    "category": "Algorithms"
+  },
+  {
+    "question": "What is backtracking?",
+    "options": [
+      "Forward search",
+      "Trial and error with undo",
+      "Dynamic programming",
+      "Greedy approach"
+    ],
+    "answer": "Trial and error with undo",
+    "category": "Algorithms"
+  },
+  {
+    "question": "Which sorting algorithm is stable?",
+    "options": [
+      "Quick sort",
+      "Heap sort",
+      "Merge sort",
+      "Selection sort"
+    ],
+    "answer": "Merge sort",
+    "category": "Algorithms"
+  },
+  {
+    "question": "What is the purpose of hashing?",
+    "options": [
+      "Sorting",
+      "Fast data retrieval",
+      "Compression",
+      "Encryption"
+    ],
+    "answer": "Fast data retrieval",
+    "category": "Algorithms"
+  },
+  {
+    "question": "Which algorithm detects cycle in graph?",
+    "options": [
+      "BFS",
+      "DFS",
+      "Dijkstra",
+      "Prim's"
+    ],
+    "answer": "DFS",
+    "category": "Algorithms"
+  },
+  {
+    "question": "What is the two-pointer technique?",
+    "options": [
+      "Double pointers",
+      "Using two indices to traverse",
+      "Two arrays",
+      "Dual loops"
+    ],
+    "answer": "Using two indices to traverse",
+    "category": "Algorithms"
+  },
+  {
+    "question": "Which algorithm finds all pairs shortest paths?",
+    "options": [
+      "Dijkstra",
+      "Bellman-Ford",
+      "Floyd-Warshall",
       "Kruskal"
     ],
-    "answer": "Dijkstra"
+    "answer": "Floyd-Warshall",
+    "category": "Algorithms"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q86)",
+    "question": "What is memoization?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "Memory allocation",
+      "Caching computed results",
+      "Memory management",
+      "Data storage"
     ],
-    "answer": "5"
+    "answer": "Caching computed results",
+    "category": "Algorithms"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q87)",
+    "question": "Which algorithm uses sliding window?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "Sorting",
+      "Subarray problems",
+      "Tree traversal",
+      "Graph search"
     ],
-    "answer": "6"
+    "answer": "Subarray problems",
+    "category": "Algorithms"
   },
   {
-    "question": "Which OOP concept hides data? (Q88)",
+    "question": "What is a recursive algorithm?",
     "options": [
-      "Abstraction",
-      "Encapsulation",
-      "Inheritance",
-      "Polymorphism"
+      "Loop based",
+      "Function calling itself",
+      "Iterative",
+      "Sequential"
     ],
-    "answer": "Encapsulation"
+    "answer": "Function calling itself",
+    "category": "Algorithms"
   },
   {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q89)",
+    "question": "Which algorithm is used for pattern matching?",
     "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q90)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "Which data structure uses FIFO order? (Q91)",
-    "options": [
-      "Stack",
-      "Queue",
-      "Tree",
-      "Graph"
-    ],
-    "answer": "Queue"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q92)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q93)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "Which traversal of BST gives sorted order? (Q94)",
-    "options": [
-      "Preorder",
-      "Postorder",
-      "Inorder",
-      "Level order"
-    ],
-    "answer": "Inorder"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q95)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q96)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "Which key uniquely identifies a record? (Q97)",
-    "options": [
-      "Foreign Key",
-      "Primary Key",
-      "Candidate Key",
-      "Composite Key"
-    ],
-    "answer": "Primary Key"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q98)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q99)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "Deadlock happens when? (Q100)",
-    "options": [
-      "CPU idle",
-      "Mutual waiting",
-      "Memory leak",
-      "Crash"
-    ],
-    "answer": "Mutual waiting"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q101)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q102)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What is the time complexity of binary search? (Q103)",
-    "options": [
-      "O(n)",
-      "O(log n)",
-      "O(n log n)",
-      "O(1)"
-    ],
-    "answer": "O(log n)"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q104)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q105)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "Which SQL command retrieves data? (Q106)",
-    "options": [
-      "INSERT",
-      "SELECT",
-      "DELETE",
-      "UPDATE"
-    ],
-    "answer": "SELECT"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q107)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q108)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "Which memory is volatile? (Q109)",
-    "options": [
-      "ROM",
-      "RAM",
-      "SSD",
-      "HDD"
-    ],
-    "answer": "RAM"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q110)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q111)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "Which data structure uses LIFO order? (Q112)",
-    "options": [
-      "Queue",
-      "Stack",
-      "Heap",
-      "Graph"
-    ],
-    "answer": "Stack"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q113)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q114)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "Which algorithm is used for shortest path? (Q115)",
-    "options": [
-      "DFS",
-      "Prim",
+      "KMP",
       "Dijkstra",
-      "Kruskal"
+      "Kruskal",
+      "Prim's"
     ],
-    "answer": "Dijkstra"
+    "answer": "KMP",
+    "category": "Algorithms"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q116)",
+    "question": "What is binary search requirement?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "Unsorted array",
+      "Sorted array",
+      "Linked list",
+      "Tree structure"
     ],
-    "answer": "5"
+    "answer": "Sorted array",
+    "category": "Algorithms"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q117)",
+    "question": "Which algorithm topologically sorts a DAG?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "Which OOP concept hides data? (Q118)",
-    "options": [
-      "Abstraction",
-      "Encapsulation",
-      "Inheritance",
-      "Polymorphism"
-    ],
-    "answer": "Encapsulation"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q119)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q120)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "Which data structure uses FIFO order? (Q121)",
-    "options": [
-      "Stack",
-      "Queue",
-      "Tree",
-      "Graph"
-    ],
-    "answer": "Queue"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q122)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q123)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "Which traversal of BST gives sorted order? (Q124)",
-    "options": [
-      "Preorder",
-      "Postorder",
-      "Inorder",
-      "Level order"
-    ],
-    "answer": "Inorder"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q125)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q126)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "Which key uniquely identifies a record? (Q127)",
-    "options": [
-      "Foreign Key",
-      "Primary Key",
-      "Candidate Key",
-      "Composite Key"
-    ],
-    "answer": "Primary Key"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q128)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q129)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "Deadlock happens when? (Q130)",
-    "options": [
-      "CPU idle",
-      "Mutual waiting",
-      "Memory leak",
-      "Crash"
-    ],
-    "answer": "Mutual waiting"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q131)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q132)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What is the time complexity of binary search? (Q133)",
-    "options": [
-      "O(n)",
-      "O(log n)",
-      "O(n log n)",
-      "O(1)"
-    ],
-    "answer": "O(log n)"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q134)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q135)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "Which SQL command retrieves data? (Q136)",
-    "options": [
-      "INSERT",
-      "SELECT",
-      "DELETE",
-      "UPDATE"
-    ],
-    "answer": "SELECT"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q137)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q138)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "Which memory is volatile? (Q139)",
-    "options": [
-      "ROM",
-      "RAM",
-      "SSD",
-      "HDD"
-    ],
-    "answer": "RAM"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q140)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q141)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "Which data structure uses LIFO order? (Q142)",
-    "options": [
-      "Queue",
-      "Stack",
-      "Heap",
-      "Graph"
-    ],
-    "answer": "Stack"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q143)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q144)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "Which algorithm is used for shortest path? (Q145)",
-    "options": [
+      "BFS",
       "DFS",
-      "Prim",
+      "Kahn's algorithm",
+      "Dijkstra"
+    ],
+    "answer": "Kahn's algorithm",
+    "category": "Algorithms"
+  },
+  {
+    "question": "What is the N-Queens problem solved with?",
+    "options": [
+      "Dynamic programming",
+      "Backtracking",
+      "Greedy",
+      "Divide and conquer"
+    ],
+    "answer": "Backtracking",
+    "category": "Algorithms"
+  },
+  {
+    "question": "Which algorithm detects negative cycles?",
+    "options": [
       "Dijkstra",
-      "Kruskal"
+      "Bellman-Ford",
+      "Floyd-Warshall",
+      "Prim's"
     ],
-    "answer": "Dijkstra"
+    "answer": "Bellman-Ford",
+    "category": "Algorithms"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q146)",
+    "question": "What is the purpose of quick sort partition?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "Merge arrays",
+      "Divide around pivot",
+      "Sort completely",
+      "Find median"
     ],
-    "answer": "5"
+    "answer": "Divide around pivot",
+    "category": "Algorithms"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q147)",
+    "question": "Which technique solves coin change problem?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "Backtracking",
+      "Dynamic programming",
+      "Divide and conquer",
+      "Greedy"
     ],
-    "answer": "6"
+    "answer": "Dynamic programming",
+    "category": "Algorithms"
   },
   {
-    "question": "Which OOP concept hides data? (Q148)",
+    "question": "What is binary tree traversal?",
     "options": [
-      "Abstraction",
-      "Encapsulation",
-      "Inheritance",
-      "Polymorphism"
+      "Searching",
+      "Visiting all nodes",
+      "Sorting",
+      "Balancing"
     ],
-    "answer": "Encapsulation"
+    "answer": "Visiting all nodes",
+    "category": "Algorithms"
   },
   {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q149)",
+    "question": "Which algorithm is used for activity selection?",
     "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
+      "Dynamic programming",
+      "Greedy",
+      "Backtracking",
+      "Divide and conquer"
     ],
-    "answer": "4"
+    "answer": "Greedy",
+    "category": "Algorithms"
   },
   {
-    "question": "What will Python print?\nprint(bool([])) (Q150)",
+    "question": "What is the radix sort key idea?",
     "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
+      "Comparison based",
+      "Digit by digit sorting",
+      "Divide and conquer",
+      "Merge subarrays"
     ],
-    "answer": "False"
+    "answer": "Digit by digit sorting",
+    "category": "Algorithms"
   },
   {
-    "question": "Which data structure uses FIFO order? (Q151)",
+    "question": "Which algorithm finds strongly connected components?",
     "options": [
-      "Stack",
-      "Queue",
-      "Tree",
-      "Graph"
+      "BFS",
+      "Kosaraju",
+      "Dijkstra",
+      "Prim's"
     ],
-    "answer": "Queue"
+    "answer": "Kosaraju",
+    "category": "Algorithms"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q152)",
+    "question": "What is the knapsack problem solved with?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "Greedy",
+      "Dynamic programming",
+      "Backtracking",
+      "Sorting"
     ],
-    "answer": "6"
+    "answer": "Dynamic programming",
+    "category": "Algorithms"
   },
   {
-    "question": "What will Python print?\nprint(2**3**2) (Q153)",
+    "question": "Which algorithm is in-place sorting?",
     "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
+      "Merge sort",
+      "Quick sort",
+      "Counting sort",
+      "Radix sort"
     ],
-    "answer": "512"
+    "answer": "Quick sort",
+    "category": "Algorithms"
   },
   {
-    "question": "Which traversal of BST gives sorted order? (Q154)",
+    "question": "What is the union-find algorithm used for?",
     "options": [
-      "Preorder",
-      "Postorder",
-      "Inorder",
-      "Level order"
+      "Sorting",
+      "Disjoint set operations",
+      "Searching",
+      "Shortest path"
     ],
-    "answer": "Inorder"
+    "answer": "Disjoint set operations",
+    "category": "Algorithms"
   },
   {
-    "question": "What will Python print?\nprint(bool([])) (Q155)",
+    "question": "Which algorithm builds heap?",
     "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
+      "Bubble sort",
+      "Heapify",
+      "Quick sort",
+      "Merge sort"
     ],
-    "answer": "False"
+    "answer": "Heapify",
+    "category": "Algorithms"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q156)",
+    "question": "What is the smallest unit of data in computer?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "Byte",
+      "Bit",
+      "Nibble",
+      "Word"
     ],
-    "answer": "5"
+    "answer": "Bit",
+    "category": "ComputerBasics"
   },
   {
-    "question": "Which key uniquely identifies a record? (Q157)",
+    "question": "What does CPU stand for?",
     "options": [
-      "Foreign Key",
-      "Primary Key",
-      "Candidate Key",
-      "Composite Key"
+      "Central Processing Unit",
+      "Computer Personal Unit",
+      "Central Program Utility",
+      "Computer Processing Unit"
     ],
-    "answer": "Primary Key"
+    "answer": "Central Processing Unit",
+    "category": "ComputerBasics"
   },
   {
-    "question": "What will Python print?\nprint(2**3**2) (Q158)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q159)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "Deadlock happens when? (Q160)",
-    "options": [
-      "CPU idle",
-      "Mutual waiting",
-      "Memory leak",
-      "Crash"
-    ],
-    "answer": "Mutual waiting"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q161)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q162)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What is the time complexity of binary search? (Q163)",
-    "options": [
-      "O(n)",
-      "O(log n)",
-      "O(n log n)",
-      "O(1)"
-    ],
-    "answer": "O(log n)"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q164)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q165)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "Which SQL command retrieves data? (Q166)",
-    "options": [
-      "INSERT",
-      "SELECT",
-      "DELETE",
-      "UPDATE"
-    ],
-    "answer": "SELECT"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q167)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q168)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "Which memory is volatile? (Q169)",
+    "question": "Which is volatile memory?",
     "options": [
       "ROM",
       "RAM",
-      "SSD",
-      "HDD"
+      "Hard Disk",
+      "SSD"
     ],
-    "answer": "RAM"
+    "answer": "RAM",
+    "category": "ComputerBasics"
   },
   {
-    "question": "What will Python print?\nprint(bool([])) (Q170)",
+    "question": "What is the brain of computer?",
     "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
+      "Monitor",
+      "CPU",
+      "Keyboard",
+      "RAM"
     ],
-    "answer": "False"
+    "answer": "CPU",
+    "category": "ComputerBasics"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q171)",
+    "question": "How many bits are in a byte?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "Which data structure uses LIFO order? (Q172)",
-    "options": [
-      "Queue",
-      "Stack",
-      "Heap",
-      "Graph"
-    ],
-    "answer": "Stack"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q173)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q174)",
-    "options": [
-      "3",
       "4",
-      "5",
-      "Error"
+      "8",
+      "16",
+      "32"
     ],
-    "answer": "4"
+    "answer": "8",
+    "category": "ComputerBasics"
   },
   {
-    "question": "Which algorithm is used for shortest path? (Q175)",
+    "question": "What does RAM stand for?",
     "options": [
-      "DFS",
-      "Prim",
-      "Dijkstra",
-      "Kruskal"
+      "Random Access Memory",
+      "Read Access Memory",
+      "Rapid Access Memory",
+      "Remote Access Memory"
     ],
-    "answer": "Dijkstra"
+    "answer": "Random Access Memory",
+    "category": "ComputerBasics"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q176)",
+    "question": "Which is an input device?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "Monitor",
+      "Printer",
+      "Keyboard",
+      "Speaker"
     ],
-    "answer": "5"
+    "answer": "Keyboard",
+    "category": "ComputerBasics"
   },
   {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q177)",
+    "question": "What is ROM?",
     "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
+      "Random Only Memory",
+      "Read Only Memory",
+      "Rapid Output Memory",
+      "Remote Output Memory"
     ],
-    "answer": "6"
+    "answer": "Read Only Memory",
+    "category": "ComputerBasics"
   },
   {
-    "question": "Which OOP concept hides data? (Q178)",
+    "question": "Which is an output device?",
     "options": [
-      "Abstraction",
-      "Encapsulation",
-      "Inheritance",
-      "Polymorphism"
+      "Mouse",
+      "Scanner",
+      "Monitor",
+      "Microphone"
     ],
-    "answer": "Encapsulation"
+    "answer": "Monitor",
+    "category": "ComputerBasics"
   },
   {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q179)",
+    "question": "What is the full form of USB?",
     "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
+      "Universal Serial Bus",
+      "Universal System Bus",
+      "Uniform Serial Bus",
+      "Uniform System Bus"
     ],
-    "answer": "4"
+    "answer": "Universal Serial Bus",
+    "category": "ComputerBasics"
   },
   {
-    "question": "What will Python print?\nprint(bool([])) (Q180)",
+    "question": "Which is the fastest memory?",
     "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "Which data structure uses FIFO order? (Q181)",
-    "options": [
-      "Stack",
-      "Queue",
-      "Tree",
-      "Graph"
-    ],
-    "answer": "Queue"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q182)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q183)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "Which traversal of BST gives sorted order? (Q184)",
-    "options": [
-      "Preorder",
-      "Postorder",
-      "Inorder",
-      "Level order"
-    ],
-    "answer": "Inorder"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q185)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q186)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "Which key uniquely identifies a record? (Q187)",
-    "options": [
-      "Foreign Key",
-      "Primary Key",
-      "Candidate Key",
-      "Composite Key"
-    ],
-    "answer": "Primary Key"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q188)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q189)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "Deadlock happens when? (Q190)",
-    "options": [
-      "CPU idle",
-      "Mutual waiting",
-      "Memory leak",
-      "Crash"
-    ],
-    "answer": "Mutual waiting"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",a++); (Q191)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "5"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q192)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What is the time complexity of binary search? (Q193)",
-    "options": [
-      "O(n)",
-      "O(log n)",
-      "O(n log n)",
-      "O(1)"
-    ],
-    "answer": "O(log n)"
-  },
-  {
-    "question": "What is the output?\nx=[1,2,3]; x.append([4,5]); print(len(x)) (Q194)",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "Error"
-    ],
-    "answer": "4"
-  },
-  {
-    "question": "What will Python print?\nprint(bool([])) (Q195)",
-    "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
-    ],
-    "answer": "False"
-  },
-  {
-    "question": "Which SQL command retrieves data? (Q196)",
-    "options": [
-      "INSERT",
-      "SELECT",
-      "DELETE",
-      "UPDATE"
-    ],
-    "answer": "SELECT"
-  },
-  {
-    "question": "What will be the output in C?\nint a=5; printf(\"%d\",++a); (Q197)",
-    "options": [
-      "5",
-      "6",
-      "Error",
-      "0"
-    ],
-    "answer": "6"
-  },
-  {
-    "question": "What will Python print?\nprint(2**3**2) (Q198)",
-    "options": [
-      "64",
-      "512",
-      "256",
-      "Error"
-    ],
-    "answer": "512"
-  },
-  {
-    "question": "Which memory is volatile? (Q199)",
-    "options": [
-      "ROM",
       "RAM",
-      "SSD",
-      "HDD"
+      "Cache",
+      "Hard Disk",
+      "Register"
     ],
-    "answer": "RAM"
+    "answer": "Register",
+    "category": "ComputerBasics"
   },
   {
-    "question": "What will Python print?\nprint(bool([])) (Q200)",
+    "question": "What is an algorithm?",
     "options": [
-      "True",
-      "False",
-      "Error",
-      "None"
+      "Programming language",
+      "Step-by-step procedure",
+      "Data structure",
+      "Computer hardware"
     ],
-    "answer": "False"
+    "answer": "Step-by-step procedure",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "What does GUI stand for?",
+    "options": [
+      "General User Interface",
+      "Graphical User Interface",
+      "Global User Interface",
+      "Generic User Interface"
+    ],
+    "answer": "Graphical User Interface",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "Which is secondary storage?",
+    "options": [
+      "RAM",
+      "Cache",
+      "Hard Disk",
+      "Register"
+    ],
+    "answer": "Hard Disk",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "What is binary system base?",
+    "options": [
+      "2",
+      "8",
+      "10",
+      "16"
+    ],
+    "answer": "2",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "What is compiler?",
+    "options": [
+      "Hardware",
+      "Translates entire code",
+      "Operating system",
+      "Memory"
+    ],
+    "answer": "Translates entire code",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "What does ALU stand for?",
+    "options": [
+      "Arithmetic Logic Unit",
+      "Advanced Logic Unit",
+      "Automatic Logic Unit",
+      "Array Logic Unit"
+    ],
+    "answer": "Arithmetic Logic Unit",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "Which is non-volatile memory?",
+    "options": [
+      "RAM",
+      "Cache",
+      "ROM",
+      "Register"
+    ],
+    "answer": "ROM",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "What is machine language?",
+    "options": [
+      "High-level language",
+      "Binary code",
+      "Assembly language",
+      "Natural language"
+    ],
+    "answer": "Binary code",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "What is firmware?",
+    "options": [
+      "Software on hardware",
+      "Operating system",
+      "Application software",
+      "Programming language"
+    ],
+    "answer": "Software on hardware",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "Which number system uses 0-9 and A-F?",
+    "options": [
+      "Binary",
+      "Octal",
+      "Decimal",
+      "Hexadecimal"
+    ],
+    "answer": "Hexadecimal",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "What is booting?",
+    "options": [
+      "Installing OS",
+      "Starting computer",
+      "Shutting down",
+      "Running program"
+    ],
+    "answer": "Starting computer",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "What is a pixel?",
+    "options": [
+      "Picture element",
+      "Program element",
+      "Processing element",
+      "Portable element"
+    ],
+    "answer": "Picture element",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "Which port is fastest?",
+    "options": [
+      "USB 2.0",
+      "USB 3.0",
+      "Serial",
+      "Parallel"
+    ],
+    "answer": "USB 3.0",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "What is cache memory?",
+    "options": [
+      "Main memory",
+      "Fast buffer memory",
+      "Secondary storage",
+      "Virtual memory"
+    ],
+    "answer": "Fast buffer memory",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "What is open source software?",
+    "options": [
+      "Free and modifiable",
+      "Commercial software",
+      "System software",
+      "Closed software"
+    ],
+    "answer": "Free and modifiable",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "What is the motherboard?",
+    "options": [
+      "Storage device",
+      "Main circuit board",
+      "Power supply",
+      "Output device"
+    ],
+    "answer": "Main circuit board",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "What does BIOS stand for?",
+    "options": [
+      "Basic Input Output System",
+      "Binary Input Output System",
+      "Basic Internal Operating System",
+      "Binary Internal Operating System"
+    ],
+    "answer": "Basic Input Output System",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "What is multitasking?",
+    "options": [
+      "Multiple users",
+      "Multiple programs running",
+      "Multiple computers",
+      "Multiple processors"
+    ],
+    "answer": "Multiple programs running",
+    "category": "ComputerBasics"
+  },
+  {
+    "question": "What is ASCII?",
+    "options": [
+      "Programming language",
+      "Character encoding standard",
+      "Operating system",
+      "Data structure"
+    ],
+    "answer": "Character encoding standard",
+    "category": "ComputerBasics"
   }
 ]
