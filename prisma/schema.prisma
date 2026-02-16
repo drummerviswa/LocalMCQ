@@ -1,12 +1,7 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
-  // provider = "prisma-client"
-  // output   = "../generated/prisma"
   provider = "prisma-client-js"
 }
 
@@ -22,31 +17,52 @@ model Admin {
   name     String
 }
 
-model Participant {
-  id         String @id @default(auto()) @map("_id") @db.ObjectId
-  name       String
-  regno      String @unique
-  department String
-  course     String
-  branch     String
-  mobileno   String @unique
-  teamId     String
-  team       Team   @relation(fields: [teamId], references: [id])
-}
-
 model Question {
-  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
   question String
-  options  String[]
+  options  Json
   answer   String
+  category String // Output, Programming, DBMS, OS, OOPS, Networks, DataStructures, TimeComplexity, Algorithms, ComputerBasics
 }
 
 model Team {
-  id        String        @id @default(auto()) @map("_id") @db.ObjectId
-  teamname  String
-  members   Participant[]
-  quizscore String?
-  timeTaken String?
-  questions Json? // ✅ store shown questions
-  answers   Json? // ✅ store answers map
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  teamname  String   @unique
+  members   Member[]
+  answers   Answer[]
+
+  // exam state
+  startTime BigInt?
+  endTime   BigInt?
+  quizscore Int      @default(0)
+  strikes   Int      @default(0)
+  disqualified Boolean @default(false)
+
+  questions Json? // [qid, qid, ...]
+}
+
+model Member {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  mobileno   String
+  regno      String
+  department String
+  course     String
+  branch     String
+  teamId     String @db.ObjectId
+  Team       Team   @relation(fields: [teamId], references: [id], onDelete: Cascade)
+
+  @@index([teamId])
+}
+
+model Answer {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  teamId String @db.ObjectId
+  qid    String @db.ObjectId
+  answer String
+
+  Team Team @relation(fields: [teamId], references: [id], onDelete: Cascade)
+
+  @@unique([teamId, qid])
+  @@index([teamId])
 }

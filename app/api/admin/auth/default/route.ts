@@ -3,8 +3,8 @@ import { prisma } from "@/lib/prisma";
 import bcrypt from "bcrypt";
 
 export async function GET() {
-  const adminUsername = process.env.NEXT_PUBLIC_ADMIN_USERNAME || "admin";
-  const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "admin";
+  const adminUsername = process.env.ADMIN_USERNAME || "admin";
+  const adminPassword = process.env.ADMIN_PASSWORD || "admin";
 
   if (!adminUsername || !adminPassword) {
     return NextResponse.json(

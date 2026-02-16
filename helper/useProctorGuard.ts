@@ -3,34 +3,57 @@
 import { useEffect } from "react";
 
 export default function useProctorGuard(
-  onStrike: () => void,
+  teamid: string,
+  onStrike: (strikes: number) => void,
   onDisqualify: () => void
 ) {
   useEffect(() => {
-    let strikes = Number(localStorage.getItem("mal_strikes") || "0");
+    if (!teamid) return;
+
+    let isRegistering = false;
 
     const isEnding = () =>
       localStorage.getItem("quiz_ending") === "true";
 
     const enterFS = async () => {
-      if (!document.fullscreenElement) {
+      if (!document.fullscreenElement && !isEnding()) {
         try {
           await document.documentElement.requestFullscreen();
-        } catch {}
+        } catch (err) {
+          console.error("Fullscreen request failed", err);
+        }
       }
     };
 
-    const registerStrike = () => {
-      if (isEnding()) return;
+    const registerStrike = async () => {
+      if (isEnding() || isRegistering) return;
+      isRegistering = true;
 
-      strikes += 1;
-      localStorage.setItem("mal_strikes", strikes.toString());
+      try {
+        const res = await fetch("/api/quiz/strike", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ teamid }),
+        });
+        const data = await res.json();
 
-      if (strikes > 2) onDisqualify();
-      else onStrike();
+        if (data.success) {
+          if (data.disqualified) {
+            onDisqualify();
+          } else {
+            onStrike(data.strikes);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to register strike", err);
+      } finally {
+        isRegistering = false;
+        // Re-force fullscreen after strike
+        setTimeout(enterFS, 500);
+      }
     };
 
-    // Always force fullscreen
+    // Initial fullscreen
     enterFS();
 
     // ❌ Copy / select / right click
@@ -54,24 +77,23 @@ export default function useProctorGuard(
 
     // ❌ Fullscreen exit (ESC)
     const fsHandler = () => {
-      if (!document.fullscreenElement) {
+      if (!document.fullscreenElement && !isEnding()) {
         registerStrike();
-        setTimeout(enterFS, 200);
       }
     };
     document.addEventListener("fullscreenchange", fsHandler);
 
     // ❌ Tab / app switch
     const visHandler = () => {
-      if (document.hidden) {
+      if (document.hidden && !isEnding()) {
         registerStrike();
-        setTimeout(enterFS, 200);
       }
     };
     document.addEventListener("visibilitychange", visHandler);
 
     // ❌ Devtools open detection
     const devInterval = setInterval(() => {
+      if (isEnding()) return;
       const threshold = 160;
       if (
         window.outerWidth - window.innerWidth > threshold ||
@@ -79,7 +101,7 @@ export default function useProctorGuard(
       ) {
         registerStrike();
       }
-    }, 1000);
+    }, 2000);
 
     return () => {
       document.removeEventListener("copy", prevent);
@@ -90,5 +112,5 @@ export default function useProctorGuard(
       document.removeEventListener("visibilitychange", visHandler);
       clearInterval(devInterval);
     };
-  }, []);
+  }, [teamid, onStrike, onDisqualify]);
 }

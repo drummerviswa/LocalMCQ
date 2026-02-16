@@ -12,39 +12,33 @@ export async function POST(req: Request) {
       );
     }
 
-    const team = await prisma.team.findUnique({
-      where: { id: teamid },
-      include: { answers: true },
+    const currentTeam = await prisma.team.findUnique({
+      where: { id: teamid }
     });
 
-    if (!team) {
+    if (!currentTeam) {
       return NextResponse.json(
         { success: false, message: "Team not found" },
         { status: 404 }
       );
     }
 
-    const questions = await prisma.question.findMany({
-      where: { id: { in: team.questions as string[] } },
-      select: { id: true, answer: true }, // Only fetch needed fields
-    });
+    const newStrikes = currentTeam.strikes + 1;
+    const isDisqualified = newStrikes >= 3;
 
-    let score = 0;
-
-    team.answers.forEach((a) => {
-      const q = questions.find((q) => q.id === a.qid);
-      if (q?.answer === a.answer) score++;
-    });
-
-    await prisma.team.update({
+    const team = await prisma.team.update({
       where: { id: teamid },
       data: {
-        quizscore: score,
-        endTime: BigInt(Date.now()),
+        strikes: newStrikes,
+        disqualified: isDisqualified
       },
     });
 
-    return NextResponse.json({ success: true, score });
+    return NextResponse.json({
+      success: true,
+      strikes: team.strikes,
+      disqualified: team.disqualified
+    });
   } catch (err: any) {
     return NextResponse.json(
       { success: false, message: err.message },
