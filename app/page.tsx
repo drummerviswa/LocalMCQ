@@ -65,7 +65,7 @@ export default function Home() {
 
         <div className="mb-10">
           <ul className="space-y-4 text-lg leading-relaxed list-disc pl-6 font-medium">
-            <li>The quiz duration is <b>30 minutes</b>.</li>
+            <li>The quiz duration is <b>20 minutes</b>.</li>
             <li>Each team consists of <b>2 participants</b>.</li>
             <li>Total <b>20 MCQ questions</b> will be presented randomly.</li>
             <li>Once the quiz starts, the screen will switch to <b>fullscreen mode</b>.</li>

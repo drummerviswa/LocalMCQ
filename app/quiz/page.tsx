@@ -15,7 +15,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 
-const EXAM_DURATION = 30 * 60 * 1000; // 30 mins
+const EXAM_DURATION = 20 * 60 * 1000; // 20 mins
 
 export default function QuizPage() {
   const [teamid, setTeamId] = useState<string | null>(null);
