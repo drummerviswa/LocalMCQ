@@ -59,7 +59,15 @@ export default function AdminPage() {
   }, [isAuthenticated]);
 
   const eligibleTeams = useMemo(
-    () => teams.filter(t => !t.disqualified).sort((a, b) => b.quizscore - a.quizscore || (Number(a.endTime) - Number(a.startTime)) - (Number(b.endTime) - Number(b.startTime))),
+    () => teams.filter(t => !t.disqualified).sort((a, b) => {
+      // 1. Sort by score (descending)
+      if (b.quizscore !== a.quizscore) return b.quizscore - a.quizscore;
+
+      // 2. Sort by time taken (ascending) - Finished teams first
+      const timeA = (a.endTime && a.startTime) ? Number(a.endTime) - Number(a.startTime) : Infinity;
+      const timeB = (b.endTime && b.startTime) ? Number(b.endTime) - Number(b.startTime) : Infinity;
+      return timeA - timeB;
+    }),
     [teams]
   );
 
@@ -74,12 +82,12 @@ export default function AdminPage() {
   };
 
   const formatTime = (start: number, end: number) => {
-    if (!start || !end) return "N/A";
+    if (!start || !end) return "DNF";
     const ms = end - start;
     const mins = Math.floor(ms / 60000);
     const secs = Math.floor((ms % 60000) / 1000);
-    const msecs = Math.floor((ms % 1000) / 10);
-    return `${mins}:${secs.toString().padStart(2, '0')}:${msecs.toString().padStart(2, '0')}`;
+    const msecs = ms % 1000;
+    return `${mins}m ${secs.toString().padStart(2, '0')}s ${msecs.toString().padStart(3, '0')}ms`;
   };
 
   const handleExportPDF = (data: any[], title: string) => {

@@ -63,13 +63,10 @@ export async function POST(req: Request) {
     // Final shuffle of the 20 questions
     const finalSelection = shuffle(selectedQuestions);
 
-    const startTime = Date.now();
-
     await prisma.team.update({
       where: { id: teamid },
       data: {
         questions: finalSelection.map((q) => q.id),
-        startTime: BigInt(startTime),
       },
     });
 
@@ -79,7 +76,7 @@ export async function POST(req: Request) {
       options: q.options,
     }));
 
-    return NextResponse.json({ questions: safe, startTime });
+    return NextResponse.json({ questions: safe, startTime: null });
   } catch (err: any) {
     return NextResponse.json(
       { success: false, message: err.message },

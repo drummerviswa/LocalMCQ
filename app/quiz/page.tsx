@@ -47,7 +47,7 @@ export default function QuizPage() {
   }, []);
 
   useProctorGuard(
-    teamid || "",
+    (loaded && teamid) ? teamid : "",
     (newStrikes) => {
       setStrikes(newStrikes);
       setShowWarning(true);
@@ -75,13 +75,26 @@ export default function QuizPage() {
       body: JSON.stringify({ teamid }),
     })
       .then((res) => res.json())
-      .then((data) => {
+      .then(async (data) => {
         if (data.success === false) {
           console.error("Failed to start quiz:", data.message);
           return;
         }
         setQuestions(data.questions);
-        setStartTime(Number(data.startTime));
+
+        // If startTime is not set, it's the first time - start it now!
+        if (!data.startTime) {
+          const startRes = await fetch("/api/quiz/timer/start", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ teamid }),
+          });
+          const startData = await startRes.json();
+          setStartTime(Number(startData.startTime));
+        } else {
+          setStartTime(Number(data.startTime));
+        }
+
         setLoaded(true);
       })
       .catch((err) => {
@@ -153,11 +166,13 @@ export default function QuizPage() {
     if (ms < 0) ms = 0;
     const mins = Math.floor(ms / 60000);
     const secs = Math.floor((ms % 60000) / 1000);
-    const msecs = Math.floor((ms % 1000) / 10);
-    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}:${msecs.toString().padStart(2, '0')}`;
+    const msecs = ms % 1000;
+    return `${mins.toString().padStart(2, '0')}m ${secs.toString().padStart(2, '0')}s ${msecs.toString().padStart(3, '0')}ms`;
   };
 
   const isLastMinute = timeLeft <= 60000;
+  const answeredCount = Object.keys(answers).length;
+  const totalQuestions = questions.length || 20;
 
   if (disqualified) {
     return (
@@ -188,9 +203,17 @@ export default function QuizPage() {
           </div>
         </div>
 
-        <Button variant="destructive" className="font-bold" onClick={() => setShowEndConfirm(true)}>
-          End Quiz
-        </Button>
+        <div className="flex items-center gap-6">
+          <div className="flex flex-col items-end">
+            <span className="text-[10px] uppercase font-bold text-zinc-500 tracking-wider">Progress</span>
+            <span className="text-xl font-black text-black">
+              {answeredCount} <span className="text-zinc-400 text-sm font-medium">/ {totalQuestions}</span>
+            </span>
+          </div>
+          <Button variant="destructive" className="font-bold px-6" onClick={() => setShowEndConfirm(true)}>
+            End Quiz
+          </Button>
+        </div>
       </div>
 
       {/* Questions */}
