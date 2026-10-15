@@ -2,8 +2,9 @@
 "use client";
 
 import { useState } from "react";
+import Editor from "@monaco-editor/react";
 import { Button } from "@/components/ui/button";
-import { Play, RotateCcw, Trash2, Clock, CheckCircle2, AlertCircle, Terminal } from "lucide-react";
+import { Play, RotateCcw, Trash2, Clock, CheckCircle2, AlertCircle, Terminal, Code2 } from "lucide-react";
 
 export type SupportedLanguage = "python" | "c" | "cpp" | "java" | "javascript";
 
@@ -117,24 +118,16 @@ export default function IntegratedIDE({ className = "" }: { className?: string }
     }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    // Enable Tab indentation inside textarea
-    if (e.key === "Tab") {
-      e.preventDefault();
-      const target = e.target as HTMLTextAreaElement;
-      const start = target.selectionStart;
-      const end = target.selectionEnd;
-
-      const newCode = code.substring(0, start) + "    " + code.substring(end);
-      setCode(newCode);
-
-      setTimeout(() => {
-        target.selectionStart = target.selectionEnd = start + 4;
-      }, 0);
-    }
-  };
-
-  const lineCount = code.split("\n").length;
+  const monacoLanguage =
+    language === "cpp"
+      ? "cpp"
+      : language === "c"
+      ? "c"
+      : language === "python"
+      ? "python"
+      : language === "java"
+      ? "java"
+      : "javascript";
 
   return (
     <div className={`flex flex-col bg-zinc-950 text-zinc-100 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] font-mono ${className}`}>
@@ -142,9 +135,9 @@ export default function IntegratedIDE({ className = "" }: { className?: string }
       <div className="bg-zinc-900 border-b-2 border-zinc-800 px-4 py-3 flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
-            <Terminal className="w-5 h-5 text-emerald-400" />
+            <Code2 className="w-5 h-5 text-emerald-400" />
             <span className="font-black text-sm uppercase text-white font-sans tracking-wide">
-              Online IDE & Sandbox
+              Code Studio (Monaco Editor)
             </span>
           </div>
 
@@ -186,25 +179,23 @@ export default function IntegratedIDE({ className = "" }: { className?: string }
         </div>
       </div>
 
-      {/* Code Editor Window */}
-      <div className="flex-1 flex overflow-hidden border-b-2 border-zinc-800 min-h-[320px] max-h-[500px]">
-        {/* Line Numbers */}
-        <div className="bg-zinc-900/60 text-zinc-600 select-none py-3 px-3 text-right text-xs font-mono border-r border-zinc-800/80 shrink-0">
-          {Array.from({ length: Math.max(lineCount, 12) }).map((_, i) => (
-            <div key={i} className="leading-6">
-              {i + 1}
-            </div>
-          ))}
-        </div>
-
-        {/* Textarea Code Input */}
-        <textarea
+      {/* Monaco Code Editor Window */}
+      <div className="relative border-b-2 border-zinc-800 h-[380px] bg-zinc-950">
+        <Editor
+          height="100%"
+          theme="vs-dark"
+          language={monacoLanguage}
           value={code}
-          onChange={(e) => setCode(e.target.value)}
-          onKeyDown={handleKeyDown}
-          spellCheck={false}
-          className="flex-1 bg-zinc-950 text-zinc-100 p-3 font-mono text-xs md:text-sm leading-6 resize-none focus:outline-none selection:bg-blue-900"
-          placeholder="Write your code here..."
+          onChange={(val) => setCode(val || "")}
+          options={{
+            minimap: { enabled: false },
+            fontSize: 13,
+            fontFamily: "Fira Code, Consolas, monospace",
+            scrollBeyondLastLine: false,
+            automaticLayout: true,
+            tabSize: 4,
+            wordWrap: "on",
+          }}
         />
       </div>
 
@@ -229,66 +220,56 @@ export default function IntegratedIDE({ className = "" }: { className?: string }
                 : "text-zinc-400 hover:text-white"
             }`}
           >
-            Custom Input (stdin) {stdin.trim() ? "•" : ""}
+            Standard Input (stdin)
           </button>
         </div>
 
-        {execTime !== null && (
-          <div className="flex items-center gap-1.5 text-zinc-500 font-mono text-[11px]">
-            <Clock className="w-3 h-3 text-zinc-400" />
-            <span>Time: {execTime}ms</span>
-          </div>
-        )}
+        <div className="flex items-center gap-3 text-[11px] text-zinc-400">
+          {execTime !== null && (
+            <span className="flex items-center gap-1">
+              <Clock className="w-3 h-3 text-zinc-500" /> {execTime}ms
+            </span>
+          )}
+          <button
+            onClick={() => {
+              setOutput("");
+              setError(null);
+            }}
+            title="Clear output console"
+            className="hover:text-red-400"
+          >
+            <Trash2 className="w-3.5 h-3.5" />
+          </button>
+        </div>
       </div>
 
-      {/* Bottom Console Panel */}
-      <div className="p-4 bg-zinc-950 min-h-[140px] max-h-[220px] overflow-y-auto text-xs font-mono">
-        {activeBottomTab === "output" ? (
-          <div>
-            {running && (
-              <div className="text-zinc-400 animate-pulse flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                Executing program in sandbox...
-              </div>
-            )}
-
-            {error && (
-              <div className="text-red-400 bg-red-950/40 p-3 border border-red-800/80 mb-2 whitespace-pre-wrap flex items-start gap-2">
-                <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-red-400" />
-                <div>
-                  <div className="font-bold text-[11px] uppercase tracking-wider mb-1">Execution / Runtime Error:</div>
-                  <div>{error}</div>
-                </div>
-              </div>
-            )}
-
-            {output && (
-              <div className="text-zinc-200 whitespace-pre-wrap">
-                <div className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-1">Program Output:</div>
-                <div className="bg-black/60 p-3 border border-zinc-800 text-emerald-300 font-mono">
-                  {output}
-                </div>
-              </div>
-            )}
-
-            {!running && !error && !output && (
-              <div className="text-zinc-600 italic">
-                Press "Run Code" above to compile and execute your code.
-              </div>
-            )}
-          </div>
+      {/* Bottom Panel Content */}
+      <div className="h-44 p-3 bg-zinc-950 overflow-y-auto text-xs leading-5">
+        {activeBottomTab === "stdin" ? (
+          <textarea
+            value={stdin}
+            onChange={(e) => setStdin(e.target.value)}
+            placeholder="Type standard input here (e.g. arguments or test case input)..."
+            className="w-full h-full bg-transparent text-zinc-200 resize-none focus:outline-none font-mono placeholder:text-zinc-600"
+          />
         ) : (
-          <div>
-            <div className="text-[10px] uppercase font-bold text-zinc-500 mb-1.5">
-              Input data passed to program via standard input (stdin):
-            </div>
-            <textarea
-              value={stdin}
-              onChange={(e) => setStdin(e.target.value)}
-              placeholder="e.g. 42 \n John \n 3.14"
-              rows={4}
-              className="w-full bg-black text-zinc-200 p-2.5 border border-zinc-800 focus:outline-none focus:border-blue-500 text-xs font-mono resize-none"
-            />
+          <div className="space-y-2">
+            {error && (
+              <div className="text-red-400 flex items-start gap-2 bg-red-950/40 p-2.5 border border-red-900/60 font-mono">
+                <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-red-500" />
+                <div className="whitespace-pre-wrap">{error}</div>
+              </div>
+            )}
+
+            {output ? (
+              <pre className="text-zinc-200 whitespace-pre-wrap font-mono select-text">
+                {output}
+              </pre>
+            ) : !error ? (
+              <div className="text-zinc-600 italic">
+                Terminal idle. Click &quot;Run Code&quot; to execute your logic in the sandbox.
+              </div>
+            ) : null}
           </div>
         )}
       </div>

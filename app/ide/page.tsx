@@ -28,11 +28,6 @@ export default function StandaloneIDEPage() {
 
         <div className="flex items-center gap-4 text-xs font-mono text-zinc-400">
           <span className="hidden sm:inline">Supported: Python 3 • C • C++ • Java 17 • Node.js</span>
-          <Link href="/admin">
-            <Button variant="outline" size="sm" className="font-bold uppercase text-xs rounded-none border-zinc-700 text-white">
-              Admin
-            </Button>
-          </Link>
         </div>
       </header>
 

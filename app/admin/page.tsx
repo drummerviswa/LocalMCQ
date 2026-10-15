@@ -39,12 +39,41 @@ import {
   XCircle,
   AlertTriangle,
   Pencil,
+  KeyRound,
+  ArrowLeft,
 } from "lucide-react";
 
 export default function AdminDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+
+  // Security Portal PIN Protection (PIN-21679)
+  const [isPinVerified, setIsPinVerified] = useState(false);
+  const [enteredPin, setEnteredPin] = useState("");
+  const [pinError, setPinError] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const stored = sessionStorage.getItem("admin_pin_verified");
+      if (stored === "21679") {
+        setIsPinVerified(true);
+      }
+    }
+  }, []);
+
+  const handleVerifyPin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (enteredPin.trim() === "21679") {
+      if (typeof window !== "undefined") {
+        sessionStorage.setItem("admin_pin_verified", "21679");
+      }
+      setIsPinVerified(true);
+      setPinError("");
+    } else {
+      setPinError("Access Denied: Invalid Security Access PIN");
+    }
+  };
 
   // Active Tab
   const [activeTab, setActiveTab] = useState<"exams" | "questions" | "results" | "admins">("exams");
@@ -879,8 +908,18 @@ export default function AdminDashboard() {
   };
 
   const handleLogout = async () => {
-    await fetch("/api/admin/auth/logout");
-    window.location.reload();
+    try {
+      await fetch("/api/admin/auth/logout", { method: "POST" });
+    } catch (e) {
+      console.error(e);
+    }
+    if (typeof window !== "undefined") {
+      sessionStorage.removeItem("admin_pin_verified");
+    }
+    setIsAuthenticated(false);
+    setCurrentUser(null);
+    setIsPinVerified(false);
+    window.location.href = "/";
   };
 
   if (loading) {
@@ -891,8 +930,76 @@ export default function AdminDashboard() {
     );
   }
 
+  // Security Barrier: Restrict Portal behind PIN-21679
+  if (!isPinVerified) {
+    return (
+      <div className="min-h-screen bg-zinc-100 dark:bg-zinc-950 flex flex-col justify-center items-center p-4">
+        <div className="w-full max-w-md bg-white dark:bg-zinc-900 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-6 sm:p-8">
+          <div className="text-center mb-6">
+            <div className="inline-flex p-3 bg-red-600 text-white mb-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+              <KeyRound className="w-6 h-6" />
+            </div>
+            <h1 className="text-2xl font-black uppercase tracking-tight">Restricted Admin Access</h1>
+            <p className="text-xs text-zinc-500 font-medium mt-1">
+              This area is restricted to symposium coordinators and administrators only. Enter the master portal PIN to unlock.
+            </p>
+          </div>
+
+          <form onSubmit={handleVerifyPin} className="space-y-4">
+            {pinError && (
+              <div className="p-3 bg-red-100 border-2 border-red-500 text-red-700 text-xs font-bold flex items-center gap-2">
+                <AlertTriangle className="w-4 h-4 shrink-0" />
+                <span>{pinError}</span>
+              </div>
+            )}
+
+            <div>
+              <Label className="text-xs font-black uppercase">Portal Security PIN</Label>
+              <Input
+                type="password"
+                maxLength={10}
+                value={enteredPin}
+                onChange={(e) => {
+                  setEnteredPin(e.target.value);
+                  setPinError("");
+                }}
+                autoFocus
+                placeholder="Enter 5-digit PIN"
+                className="font-mono text-center tracking-widest text-lg font-black border-2 border-black rounded-none h-12 mt-1 focus-visible:ring-0"
+              />
+            </div>
+
+            <Button
+              type="submit"
+              className="w-full py-6 font-black uppercase text-sm bg-black hover:bg-zinc-800 text-white rounded-none border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+            >
+              Verify PIN & Unlock
+            </Button>
+          </form>
+
+          <div className="mt-6 pt-4 border-t border-zinc-200 dark:border-zinc-800 text-center">
+            <a
+              href="/"
+              className="text-xs font-bold text-zinc-500 hover:text-black dark:hover:text-white uppercase inline-flex items-center gap-1"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" /> Return to Public Portal
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (!isAuthenticated) {
-    return <AdminLoginPage onLogin={() => setIsAuthenticated(true)} />;
+    return (
+      <AdminLoginPage
+        onLogin={(user) => {
+          setIsAuthenticated(true);
+          if (user) setCurrentUser(user);
+          fetchExams();
+        }}
+      />
+    );
   }
 
   const currentExamObj = exams.find((e) => e.id === selectedExamId);

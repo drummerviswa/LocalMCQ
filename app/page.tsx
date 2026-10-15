@@ -7,6 +7,12 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
   Trophy,
   Clock,
   Users,
@@ -17,6 +23,9 @@ import {
   Terminal,
   Search,
   Sparkles,
+  Lock,
+  KeyRound,
+  AlertTriangle,
 } from "lucide-react";
 
 export default function Home() {
@@ -25,6 +34,24 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [filterType, setFilterType] = useState<"ALL" | "CODING" | "MCQ">("ALL");
   const [quickSlug, setQuickSlug] = useState("");
+
+  // Organizer PIN Gate Modal State (PIN-21679)
+  const [showPinModal, setShowPinModal] = useState(false);
+  const [pinInput, setPinInput] = useState("");
+  const [pinError, setPinError] = useState("");
+
+  const handleVerifyPinAndNavigate = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (pinInput.trim() === "21679") {
+      if (typeof window !== "undefined") {
+        sessionStorage.setItem("admin_pin_verified", "21679");
+      }
+      setShowPinModal(false);
+      router.push("/admin");
+    } else {
+      setPinError("Access Denied: Invalid Security Access PIN");
+    }
+  };
 
   useEffect(() => {
     fetch("/api/exams/public")
@@ -74,15 +101,19 @@ export default function Home() {
               <Terminal className="w-3.5 h-3.5 mr-1" /> Code Studio
             </Button>
           </Link>
-          <Link href="/admin">
-            <Button
-              variant="outline"
-              size="sm"
-              className="font-black text-xs uppercase border-2 border-black rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
-            >
-              Admin Portal
-            </Button>
-          </Link>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              setPinInput("");
+              setPinError("");
+              setShowPinModal(true);
+            }}
+            className="font-black text-xs uppercase border-2 border-black rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-1.5"
+            title="Organizer Portal Access (Requires PIN)"
+          >
+            <Lock className="w-3.5 h-3.5 text-red-600" /> Organizer Access
+          </Button>
         </div>
       </nav>
 
@@ -178,11 +209,16 @@ export default function Home() {
                 : `No ${filterType === "CODING" ? "coding contests" : "MCQ exams"} match your filter.`}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link href="/admin">
-                <Button className="font-black uppercase rounded-none border-2 border-black bg-black text-white px-6 py-5">
-                  Open Admin Portal
-                </Button>
-              </Link>
+              <Button
+                onClick={() => {
+                  setPinInput("");
+                  setPinError("");
+                  setShowPinModal(true);
+                }}
+                className="font-black uppercase rounded-none border-2 border-black bg-black text-white px-6 py-5 flex items-center justify-center gap-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+              >
+                <Lock className="w-4 h-4 text-red-500" /> Organizer Console
+              </Button>
               {filterType !== "ALL" && (
                 <Button
                   variant="outline"
@@ -294,6 +330,61 @@ export default function Home() {
       <footer className="border-t-4 border-black bg-white dark:bg-zinc-900 py-6 text-center text-xs font-bold uppercase tracking-widest text-zinc-500">
         LocalMCQ • Symposium Online Assessment Suite
       </footer>
+
+      {/* Security PIN Modal for Organizer Portal (PIN-21679) */}
+      <Dialog open={showPinModal} onOpenChange={setShowPinModal}>
+        <DialogContent className="max-w-md border-4 border-black rounded-none p-6">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-black uppercase flex items-center gap-2">
+              <KeyRound className="w-5 h-5 text-red-600" /> Organizer Security Check
+            </DialogTitle>
+          </DialogHeader>
+          <p className="text-xs text-zinc-500 font-medium">
+            This area is restricted to symposium coordinators and staff only. Enter security PIN to navigate to the admin dashboard.
+          </p>
+
+          <form onSubmit={handleVerifyPinAndNavigate} className="space-y-4 mt-2">
+            {pinError && (
+              <div className="p-3 bg-red-100 border-2 border-red-500 text-red-700 text-xs font-bold flex items-center gap-2">
+                <AlertTriangle className="w-4 h-4 shrink-0" />
+                <span>{pinError}</span>
+              </div>
+            )}
+
+            <div>
+              <Input
+                type="password"
+                maxLength={10}
+                value={pinInput}
+                onChange={(e) => {
+                  setPinInput(e.target.value);
+                  setPinError("");
+                }}
+                autoFocus
+                placeholder="Enter 5-digit PIN"
+                className="font-mono text-center tracking-widest text-lg font-black border-2 border-black rounded-none h-12 focus-visible:ring-0"
+              />
+            </div>
+
+            <div className="flex gap-2">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => setShowPinModal(false)}
+                className="w-1/3 py-5 font-bold uppercase rounded-none border-2 border-black"
+              >
+                Cancel
+              </Button>
+              <Button
+                type="submit"
+                className="w-2/3 py-5 font-black uppercase text-sm bg-black hover:bg-zinc-800 text-white rounded-none border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
+              >
+                Verify & Enter
+              </Button>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
