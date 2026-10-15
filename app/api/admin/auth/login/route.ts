@@ -35,9 +35,24 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const effectiveRole = admin.role || (admin.username === "admin" ? "SUPER_ADMIN" : "EVENT_ORGANIZER");
+
+    // Gracefully backfill missing legacy fields in the database
+    if (!admin.role || !admin.createdAt) {
+      await prisma.admin
+        .update({
+          where: { id: admin.id },
+          data: {
+            role: effectiveRole,
+            createdAt: admin.createdAt || new Date(),
+          },
+        })
+        .catch(() => {});
+    }
+
     // 🔐 Create JWT session
     const token = jwt.sign(
-      { id: admin.id, username: admin.username, name: admin.name, role: admin.role || "ADMIN" },
+      { id: admin.id, username: admin.username, name: admin.name || "Admin", role: effectiveRole },
       process.env.JWT_SECRET!,
       { expiresIn: "1d" },
     );
