@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
 
     // 🔐 Create JWT session
     const token = jwt.sign(
-      { id: admin.id, username: admin.username },
+      { id: admin.id, username: admin.username, name: admin.name, role: admin.role || "ADMIN" },
       process.env.JWT_SECRET!,
       { expiresIn: "1d" },
     );

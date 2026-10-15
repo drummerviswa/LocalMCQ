@@ -1,44 +1,137 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-generator client {
-  provider = "prisma-client-js"
-}
-
 datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
+generator client {
+  provider = "prisma-client-js"
+}
+
 model Admin {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  username String @unique
-  password String
-  name     String
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  username  String   @unique
+  password  String
+  name      String
+  role      String   @default("EVENT_ORGANIZER") // "SUPER_ADMIN" or "EVENT_ORGANIZER"
+  createdAt DateTime @default(now())
+  exams     Exam[]
+}
+
+model Exam {
+  id                  String     @id @default(auto()) @map("_id") @db.ObjectId
+  title               String
+  slug                String     @unique // Unique URL slug: e.g. "code-matrix", "blind-coding"
+  type                String     @default("MCQ") // "MCQ" or "CODING"
+  description         String?
+  rules               String?    // Custom rules / guidelines
+  durationMinutes     Int        @default(15)
+  totalQuestionsToAsk Int        @default(20)
+  minTeamSize         Int        @default(1)
+  maxTeamSize         Int        @default(2)
+  allowReview         Boolean    @default(true)
+  showScoreOnSubmit   Boolean    @default(false)
+  status              String     @default("LIVE") // "DRAFT", "LIVE", "ENDED"
+  accessCode          String?    // Optional access code to enter test
+  adminId             String?    @db.ObjectId
+  admin               Admin?     @relation(fields: [adminId], references: [id])
+  questions           Question[]
+  problems            Problem[]
+  teams               Team[]
+  createdAt           DateTime   @default(now())
+  updatedAt           DateTime   @updatedAt
 }
 
 model Question {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  question String
-  options  Json
-  answer   String
-  category String // Output, Programming, DBMS, OS, OOPS, Networks, DataStructures, TimeComplexity, Algorithms, ComputerBasics
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  question    String
+  options     Json
+  answer      String
+  category    String   // Output, Programming, DBMS, OS, OOPS, Networks, DataStructures, TimeComplexity, Algorithms, ComputerBasics
+  codeSnippet String?
+  points      Int      @default(1)
+  examId      String?  @db.ObjectId
+  exam        Exam?    @relation(fields: [examId], references: [id], onDelete: Cascade)
+
+  @@index([examId])
+}
+
+model Problem {
+  id           String       @id @default(auto()) @map("_id") @db.ObjectId
+  title        String
+  description  String       // Detailed Markdown problem statement
+  difficulty   String       @default("Medium") // Easy, Medium, Hard
+  constraints  String?      // e.g. 1 <= N <= 10^5
+  inputFormat  String?      // Description of input
+  outputFormat String?      // Description of output
+  starterCode  Json?        // { python: "...", cpp: "...", c: "...", java: "..." }
+  points       Int          @default(100)
+  examId       String?      @db.ObjectId
+  exam         Exam?        @relation(fields: [examId], references: [id], onDelete: Cascade)
+  testCases    TestCase[]
+  submissions  Submission[]
+  createdAt    DateTime     @default(now())
+
+  @@index([examId])
+}
+
+model TestCase {
+  id             String  @id @default(auto()) @map("_id") @db.ObjectId
+  input          String  // Stdin test input
+  expectedOutput String  // Expected Stdout output
+  isHidden       Boolean @default(false) // Visible Sample testcase vs Hidden evaluation testcase
+  explanation    String?
+  problemId      String  @db.ObjectId
+  problem        Problem @relation(fields: [problemId], references: [id], onDelete: Cascade)
+
+  @@index([problemId])
+}
+
+model Submission {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  teamId          String   @db.ObjectId
+  team            Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  problemId       String   @db.ObjectId
+  problem         Problem  @relation(fields: [problemId], references: [id], onDelete: Cascade)
+  code            String
+  language        String   // python, cpp, c, java, javascript
+  status          String   // ACCEPTED, WRONG_ANSWER, TIME_LIMIT_EXCEEDED, COMPILATION_ERROR, RUNTIME_ERROR
+  testCasesPassed Int      @default(0)
+  totalTestCases  Int      @default(0)
+  score           Int      @default(0)
+  executionTimeMs Int      @default(0)
+  submittedAt     DateTime @default(now())
+
+  @@index([teamId])
+  @@index([problemId])
 }
 
 model Team {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  teamname  String   @unique
-  members   Member[]
-  answers   Answer[]
+  id               String       @id @default(auto()) @map("_id") @db.ObjectId
+  teamname         String
+  examId           String?      @db.ObjectId
+  exam             Exam?        @relation(fields: [examId], references: [id], onDelete: Cascade)
+  members          Member[]
+  answers          Answer[]
+  submissions      Submission[]
 
-  // exam state
-  startTime BigInt?
-  endTime   BigInt?
-  quizscore Int      @default(0)
-  strikes   Int      @default(0)
-  disqualified Boolean @default(false)
+  // MCQ state
+  startTime        BigInt?
+  endTime          BigInt?
+  quizscore        Int          @default(0)
+  strikes          Int          @default(0)
+  disqualified     Boolean      @default(false)
+  questions        Json?        // [qid, qid, ...]
 
-  questions Json? // [qid, qid, ...]
+  // Coding Contest metrics & tie-breakers
+  codingScore      Int          @default(0)
+  totalPassedCases Int          @default(0)
+  penaltyTime      BigInt?      // Total time penalty in seconds for tie-break
+  submissionCount  Int          @default(0)
+
+  createdAt        DateTime     @default(now())
+
+  @@unique([teamname, examId])
+  @@index([examId])
 }
 
 model Member {
@@ -61,7 +154,7 @@ model Answer {
   qid    String @db.ObjectId
   answer String
 
-  Team Team @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  Team   Team   @relation(fields: [teamId], references: [id], onDelete: Cascade)
 
   @@unique([teamId, qid])
   @@index([teamId])

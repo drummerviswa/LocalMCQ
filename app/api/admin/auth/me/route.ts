@@ -10,8 +10,8 @@ export async function GET() {
   }
 
   try {
-    jwt.verify(token, process.env.JWT_SECRET!);
-    return NextResponse.json({ success: true });
+    const decoded = jwt.verify(token, process.env.JWT_SECRET!);
+    return NextResponse.json({ success: true, user: decoded });
   } catch {
     return NextResponse.json({ success: false }, { status: 401 });
   }

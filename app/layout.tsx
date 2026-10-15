@@ -1,21 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "./StoreProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Mathrix 26 - Code Matrix Round 1",
-  description: "MCQ based on code snippets. Solve the puzzle to find the flag.",
+  title: "LocalMCQ - Multi-Exam Assessment Platform",
+  description: "High-performance MCQ and Coding assessment suite for Symposiums and Contests",
 };
 
 export default function RootLayout({
@@ -25,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased font-sans">
         <StoreProvider>{children}</StoreProvider>
       </body>
     </html>
